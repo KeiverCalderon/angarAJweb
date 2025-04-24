@@ -17,6 +17,11 @@ export default {
 h1 {
   color: blueviolet;
   background-color: goldenrod;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
 }
 
 </style>
