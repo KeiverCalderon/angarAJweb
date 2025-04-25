@@ -24,7 +24,6 @@
 <style scoped>
 /* Importes */
 @import url(../variables.css);
-@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Quicksand:wght@300..700&display=swap');
 /* First Mobile */
     .login-div {
         display: flex;
@@ -39,6 +38,7 @@
     h1 {
         color: #333;
         margin-bottom: 20px;
+        font-weight: 400;
     }
 
     .logo-div {
@@ -87,13 +87,11 @@
         width: 90%;
     }
     .form-label {
-        font-size: 1.2em;
-        margin-bottom: 5px;
         display: none;
     }
     .form-input {
         font-size: 1em;
-        padding: 12px 10px;
+        padding: 12px 12px;
         border-radius: var(--border-radius);
         border: 1px solid #4e4e4e;
     }
