@@ -1,5 +1,9 @@
 :root {
-    --boton: #007bff;
-    --boton-hover: #0056b3;
+  /* Colores */
+    --boton: #7A1CAC;
+    --boton-hover: #7C00FE;
     --url:#673cca;
+  /* Medidas */
+    --border-radius-box:20px;
+    --border-radius: 50px;
   }
