@@ -32,7 +32,7 @@
         justify-content: flex-start;
         height: 100vh;
         width: 100%;
-        background-color: #FFF7F7;
+        background-color: var(--fondo);
         gap: 20px;
     }
     h1 {
@@ -74,7 +74,7 @@
         min-width: 280px;
         width: 80%;
         max-width: 400px;
-        background-color: white;
+        background-color: var(--tarjeta);
         padding: 20px;
         border-radius: var(--border-radius-box);
         box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
