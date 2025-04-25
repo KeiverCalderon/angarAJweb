@@ -18,6 +18,8 @@
     </div>
 </template>
 <style scoped>
+/* Importes */
+@import url(../variables.css);
 /* First Mobile */
     .login-div {
         display: flex;
@@ -60,7 +62,7 @@
         border: 1px solid #ccc;
     }
     .send-form-button {
-        background-color: #007bff;
+        background-color: var(--boton);
         color: white;
         padding: 10px 20px;
         border: none;
@@ -69,7 +71,7 @@
         margin-bottom: 20px;
     }
     .send-form-button:hover {
-        background-color: #0056b3;
+        background-color: var(--boton-hover);
     }
 
 /* Adaptación a Pantallas Más Grandes */
