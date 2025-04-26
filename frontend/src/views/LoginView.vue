@@ -3,6 +3,7 @@
         <div class="logo-div">
             <img src="../assets/logo.jpg" alt="logo de decolorvers">
             <p>Nuestras Ofertas esperan por tí!</p>
+            <a href="/" class="return-index">Volver a la tienda</a>
         </div>
         <form action="" class="form">
             <h1>Iniciar Sesión</h1>
@@ -64,6 +65,9 @@
         text-align: center;
         margin-top: 10px;
         font-family: "Cal Sans", sans-serif;
+    }
+    .logo-div a {
+        display: none;
     }
 
     .form{
@@ -145,6 +149,27 @@
         width: 50%;
         height: auto;
         margin-top: 0px;
+    }
+    .logo-div a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        background-color: var(--boton);
+        color: white;
+        text-decoration: none;
+        border: none;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        box-sizing: border-box;
+        min-width: 100px;
+        width: 90%;
+        max-width: 150px;
+        font-size: 1em;
+        font-weight: 200;
+    }
+    .logo-div a:hover {
+        background-color: var(--boton-hover);
     }
     .form {
         width: 380px;

@@ -16,7 +16,7 @@ export default {
     h1 {
         color: #202020;
         margin-left: 20px;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
         font-weight: 400;
         font-size: 2.3em;
     }
