@@ -47,10 +47,12 @@ export default {
     justify-content: center; 
     align-items: center;
     background-color: var(--principal);
+    display: block;
     }
 
 .carrousel_item{
     width: 100%;
+    height: calc(100vh - 80px);
     aspect-ratio: 1/1;
     object-fit: cover;
 }
@@ -78,7 +80,7 @@ export default {
     width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
-    max-width: 930px;
+    max-width: 1000px;
 }
 }
 
