@@ -9,7 +9,7 @@
 
 <script>
 export default {
-    name: 'HeaderView',
+    name: 'AppHeader',
 };
 </script>
 
@@ -20,12 +20,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 5px 20px;
     }
 
 header h1 {
     color: #202020;
-    margin-bottom: 10px;
     font-weight: 350;
     font-size: 2.3em;
     }
