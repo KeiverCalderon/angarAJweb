@@ -2,8 +2,8 @@
     <header>
             <h1><a href="/">Decolorvers</a></h1>
             <div class="buttons-area">
-                <a href="/"><span class="material-symbols-rounded">shopping_cart</span></a>
-                <a href="/login"><span class="material-symbols-rounded" id="bugfix_lenght">person</span></a>
+                <a href="/"><p class="a_text">Carrito</p><span class="material-symbols-rounded">shopping_cart</span></a>
+                <a href="/login"><p class="a_text">Cuenta</p><span class="material-symbols-rounded" id="bugfix_lenght">person</span></a>
             </div>
     </header>
 </template>
@@ -21,7 +21,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 20px;
+    padding: 5px 5px;
     }
 
 header h1 {
@@ -40,7 +40,11 @@ header h1 a {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
+    }
+
+.a_text{
+        display: none;
     }
 
 .buttons-area a {
@@ -56,13 +60,12 @@ header h1 a {
 
 .buttons-area a span {
     font-size: 50px;
-    color: #202020;
     transition: all 0.3s ease-in-out;
     font-family: 'Material Symbols Rounded', sans-serif;
     font-weight: 100;
     }
 
-.buttons-area a span:hover {
+.buttons-area a:hover {
     color: var(--boton-hover);
     transform: scale(1.1);
     }
@@ -70,5 +73,32 @@ header h1 a {
 #bugfix_lenght {
     font-size: 60px;
     }
+
+/* Adaptación a pantallas mas grandes */
+
+@media (min-width:400px){
+    header {
+    padding: 5px 20px;
+    }
+    .buttons-area {
+    gap: 20px;
+    }
+}
+
+@media (min-width:600px){
+    .a_text{
+        display: inline;
+        font-size: 20px;
+    }
+    .buttons-area a span {
+        font-size: 30px;
+    }
+    #bugfix_lenght {
+    font-size: 32px;
+    }
+    .buttons-area {
+    gap: 25px;
+    }
+}
 
 </style>
