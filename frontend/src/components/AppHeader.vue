@@ -1,8 +1,9 @@
 <template>
     <header>
-            <h1>Decolorvers</h1>
-            <div>
-                <a href="/login"><img src="../assets/usuario.png" alt="logo usuario"></a>
+            <h1><a href="/">Decolorvers</a></h1>
+            <div class="buttons-area">
+                <a href="/"><span class="material-symbols-rounded">shopping_cart</span></a>
+                <a href="/login"><span class="material-symbols-rounded" id="bugfix_px">person</span></a>
             </div>
     </header>
 </template>
@@ -29,11 +30,45 @@ header h1 {
     font-size: 2.3em;
     }
 
-header img {
-    width: 50px;
-    height: auto;
-    padding-top: 10px;
+header h1 a {
+    text-decoration: none;
+    color: #202020;
+    transition: all 0.3s ease-in-out;
     }
 
+.buttons-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    }
+
+.buttons-area a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #202020;
+    height: 60px;
+    aspect-ratio: 1/1;
+    transition: all 0.3s ease-in-out;
+    }
+
+.buttons-area a span {
+    font-size: 50px;
+    color: #202020;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Material Symbols Rounded', sans-serif;
+    font-weight: 100;
+    }
+
+.buttons-area a span:hover {
+    color: var(--boton-hover);
+    transform: scale(1.1);
+    }
+
+#bugfix_px {
+    font-size: 60px;
+    }
 
 </style>
