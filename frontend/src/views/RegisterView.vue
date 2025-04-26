@@ -40,7 +40,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        height: 100vh;
+        min-height: 100vh;
         width: 100%;
         background-color: var(--fondo);
         gap: 20px;
@@ -94,6 +94,7 @@
         border-radius: var(--border-radius-box);
         box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease-in-out;
+        margin-bottom: 20px;
     }
     .label-input {
         display: flex;

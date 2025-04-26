@@ -3,7 +3,7 @@
             <h1><a href="/">Decolorvers</a></h1>
             <div class="buttons-area">
                 <a href="/"><span class="material-symbols-rounded">shopping_cart</span></a>
-                <a href="/login"><span class="material-symbols-rounded" id="bugfix_px">person</span></a>
+                <a href="/login"><span class="material-symbols-rounded" id="bugfix_lenght">person</span></a>
             </div>
     </header>
 </template>
@@ -67,7 +67,7 @@ header h1 a {
     transform: scale(1.1);
     }
 
-#bugfix_px {
+#bugfix_lenght {
     font-size: 60px;
     }
 
