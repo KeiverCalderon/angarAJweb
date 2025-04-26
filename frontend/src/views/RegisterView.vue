@@ -60,6 +60,7 @@
         min-width: 280px;
         width: 80%;
         max-width: 400px;
+        animation: fade-in-normal 1s ease 0s 1 normal none;
     }
     .logo-div img {
         width: 100px;
@@ -93,8 +94,8 @@
         padding: 20px;
         border-radius: var(--border-radius-box);
         box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease-in-out;
         margin-bottom: 20px;
+        animation: fade-in-normal 1s ease 0s 1 normal none;
     }
     .label-input {
         display: flex;
@@ -207,4 +208,6 @@
     }
 }
 /* Animaciones Generales */
+
+@keyframes fade-in-normal {0% { opacity: 0; } 100% { opacity: 1;} }
 </style>
