@@ -37,7 +37,7 @@
     }
     h1 {
         color: #333;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         font-weight: 400;
     }
 
@@ -146,7 +146,7 @@
         margin-top: 0px;
     }
     .form {
-        width: 400px;
+        width: 380px;
     }
 }
 
