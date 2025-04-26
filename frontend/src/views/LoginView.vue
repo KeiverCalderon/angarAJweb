@@ -22,6 +22,7 @@
         </form>
     </div>
 </template>
+
 <style scoped>
 /* Importes */
 @import url(../variables.css);
