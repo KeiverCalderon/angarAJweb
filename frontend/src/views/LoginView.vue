@@ -178,10 +178,10 @@
 
 @media (max-height: 600px) and (max-width:900px) {
     .logo-div p {
-        margin-top: 50px;
+        display: none;
     }
     .logo-div img {
-        display: none;
+        margin-top: 50px;
     }
 }
 
