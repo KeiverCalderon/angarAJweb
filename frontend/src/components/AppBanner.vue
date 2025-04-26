@@ -6,7 +6,7 @@
             perPage: 1,
             arrows: true,
             autoplay: true,
-            interval: 2000,
+            interval: 5000,
             }"
         >
             <SplideSlide>
@@ -29,7 +29,7 @@ export default {
     components: {
         Splide,
         SplideSlide,
-  }
+    }
 };
 </script>
 
