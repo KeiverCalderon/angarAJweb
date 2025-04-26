@@ -2,6 +2,7 @@
     <header>
             <h1>Decolorvers</h1>
             <div>
+                <a href="/login"><img src="../assets/usuario.png" alt="logo usuario"></a>
             </div>
     </header>
 </template>
@@ -13,11 +14,27 @@ export default {
 </script>
 
 <style scoped>
-    h1 {
-        color: #202020;
-        margin-left: 20px;
-        margin-bottom: 10px;
-        font-weight: 400;
-        font-size: 2.3em;
+
+header {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
     }
+
+header h1 {
+    color: #202020;
+    margin-bottom: 10px;
+    font-weight: 350;
+    font-size: 2.3em;
+    }
+
+header img {
+    width: 50px;
+    height: auto;
+    padding-top: 10px;
+    }
+
+
 </style>
