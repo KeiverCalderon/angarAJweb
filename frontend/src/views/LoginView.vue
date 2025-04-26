@@ -16,7 +16,7 @@
             </div>
             <button type="submit" class="send-form-button">Iniciar Sesión</button>
             <div class="options-div">
-                <a href="/register">¿No tienes cuenta? Regístrate</a>
+                <p>¿No tienes cuenta? ‎</p><a href="/register"> Regístrate</a>
             </div>
         </form>
     </div>
@@ -124,6 +124,7 @@
 
     .options-div a {
         color: var(--url);
+        text-decoration: none;
     }
 
 /* Adaptación a Pantallas Más Grandes */
