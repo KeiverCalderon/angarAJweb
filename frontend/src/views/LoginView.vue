@@ -64,7 +64,9 @@
         font-size: 1.5em;
         text-align: center;
         margin-top: 10px;
+        margin-bottom: 10px;
         font-family: "Cal Sans", sans-serif;
+
     }
     .logo-div a {
         display: none;
@@ -150,6 +152,10 @@
         height: auto;
         margin-top: 0px;
     }
+    .logo-div p {
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
     .logo-div a {
         display: flex;
         justify-content: center;
@@ -181,7 +187,7 @@
         display: none;
     }
     .logo-div img {
-        margin-top: 50px;
+        margin-top: 30px;
     }
 }
 
