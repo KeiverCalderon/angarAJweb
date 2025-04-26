@@ -1,7 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router'; 
+import { createRouter, createWebHistory } from 'vue-router';
+import IndexView from '@/views/IndexView.vue';
 import Login from '../views/LoginView.vue';
 import Register from '../views/RegisterView.vue';
-import IndexView from '@/views/IndexView.vue';
 
 const router = createRouter({
   history: createWebHistory(),
