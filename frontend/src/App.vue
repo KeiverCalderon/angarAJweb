@@ -5,13 +5,9 @@
 </template>
 
 <script>
-// import Componente from './components/nombre_componente.vue'
 
 export default {
   name: 'App',
-  // components: {
-  //   Componente
-  // }
 }
 </script>
 
