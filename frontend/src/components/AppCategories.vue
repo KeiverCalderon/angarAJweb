@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import AppCategorie from './AppCategorie.vue';
+import AppCategorie from './AppCategory.vue';
 export default {
     name: 'AppCategories',
     components: {
