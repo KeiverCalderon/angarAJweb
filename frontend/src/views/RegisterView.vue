@@ -2,7 +2,8 @@
     <div class="login-div">
         <div class="logo-div">
             <img src="../assets/logo.jpg" alt="logo de decolorvers">
-            <p>Nuestras Ofertas esperan por tí!</p>
+            <p>¡Bienvenido a la tienda!</p>
+            <p>¡Regístrate y disfruta de nuestras ofertas!</p>
             <a href="/" class="return-index">Volver a la tienda</a>
         </div>
         <form action="" class="form">
@@ -70,11 +71,12 @@
     }
 
     .logo-div p{
+        display: none;
         color: #660261;
         font-size: 1.5em;
         text-align: center;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin-top: 0;
+        margin-bottom: 0;
         font-family: "Cal Sans", sans-serif;
 
     }
@@ -164,8 +166,8 @@
         margin-top: 0px;
     }
     .logo-div p {
-        margin-top: 15px;
-        margin-bottom: 30px;
+        display: block;
+        margin-top: 20px;
     }
     .logo-div a {
         display: flex;
@@ -184,6 +186,7 @@
         max-width: 150px;
         font-size: 1em;
         font-weight: 200;
+        margin-top: 20px;
     }
     .logo-div a:hover {
         background-color: var(--boton-hover);

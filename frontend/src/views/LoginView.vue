@@ -2,7 +2,7 @@
     <div class="login-div">
         <div class="logo-div">
             <img src="../assets/logo.jpg" alt="logo de decolorvers">
-            <p>Nuestras Ofertas esperan por tí!</p>
+            <p>¡Nuestras ofertas esperan por tí!</p>
             <a href="/" class="return-index">Volver a la tienda</a>
         </div>
         <form action="" class="form">
