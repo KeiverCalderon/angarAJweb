@@ -1,17 +1,17 @@
 <template>
-    <div class="area_banner_categorie">
-        <img class="image-categorie" src="../assets/banner_categoria.webp" alt="Banner de Categoría"/>
+    <div class="area_banner_category">
+        <img class="image-category" src="../assets/banner_categoria.webp" alt="Banner de Categoría"/>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'AppCategorie',
+    name: 'AppCategory',
 };
 </script>
 
 <style scoped>
-.area_banner_categorie{
+.area_banner_category{
     width: 100%;
     height: 300px;
     position: relative;
@@ -22,7 +22,7 @@ export default {
     align-items: center;
 }
 
-.image-categorie{
+.image-category{
     width: 100%;
     max-width: 400px;
     height: 100%;

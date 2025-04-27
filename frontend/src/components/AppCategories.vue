@@ -99,6 +99,7 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    margin-top: 25px;
     gap: 10px;
 }
 }
