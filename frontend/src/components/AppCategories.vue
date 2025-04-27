@@ -26,6 +26,9 @@ export default {
 </script>
 
 <style scoped>
+*{
+    font-family: "Cal Sans", sans-serif;
+}
 .area_categories {
     width: 100%;
     display: flex;

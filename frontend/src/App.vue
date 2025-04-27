@@ -17,8 +17,8 @@ body{
   margin: 0;
 }
 
-#app {
-  font-family: "Cal Sans", sans-serif;
+#app{
+  font-family: "Cal Sans", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

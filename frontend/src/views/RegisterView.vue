@@ -36,6 +36,9 @@
 /* Importes */
 @import url(../variables.css);
 /* First Mobile */
+    *{
+        font-family: "Cal Sans", sans-serif;
+    }
     .login-div {
         display: flex;
         flex-direction: column;
@@ -113,6 +116,7 @@
         padding: 12px 12px;
         border-radius: var(--border-radius);
         border: 1px solid #4e4e4e;
+        font-family: Arial, Helvetica, sans-serif;
     }
     .send-form-button {
         background-color: var(--boton);
@@ -128,6 +132,7 @@
         max-width: 400px;
         font-size: 1.2em;
         font-weight: 600;
+        font-family: Arial, Helvetica, sans-serif;
     }
     .send-form-button:hover {
         background-color: var(--boton-hover);

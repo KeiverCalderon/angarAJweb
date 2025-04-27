@@ -16,6 +16,10 @@ export default {
 
 <style scoped>
 
+*{
+    font-family: "Cal Sans", sans-serif;
+}
+
 header {
     height: 70px;
     display: flex;
