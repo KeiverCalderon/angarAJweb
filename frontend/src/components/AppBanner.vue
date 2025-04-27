@@ -80,7 +80,6 @@ export default {
     width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
-    max-width: 1000px;
 }
 }
 
