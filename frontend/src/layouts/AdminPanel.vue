@@ -1,6 +1,9 @@
 <template>
     <div>
-      <header>Encabezado Fijo</header>
+      <header>
+        <h1>Decolorvers Panel</h1>
+        
+      </header>
       <div class="menu-container">
         <VueSidebarMenuAkahon
           :menuIcon="'bx bxs-store-alt'"
@@ -42,6 +45,31 @@
   }
 </script>
 <style>
+header {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 5px;
+  background-color: var(--header-admin);
+  margin-left: -250px;
+}
+
+header h1 {
+  color: white;
+  font-weight: 350;
+  font-size: 2.3em;
+}
+
+.menu-container {
+  display: none;
+  position: fixed;
+}
+
+main {
+  margin-left: -250px;
+}
+
 .profile i{
   height: 40px;
   display: flex;
@@ -51,5 +79,17 @@
 
 .vue-sidebar-menu-akahon {
   font-family: Arial, Helvetica, sans-serif !important;
+}
+
+@media (min-width: 768px) {
+  header{
+    display: none;
+  }
+  .menu-container {
+    display: block;
+  }
+  main {
+  margin-left: 0px;
+}
 }
 </style>
