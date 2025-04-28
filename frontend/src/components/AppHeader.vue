@@ -2,13 +2,15 @@
     <header>
             <h1><a href="/">Decolorvers</a></h1>
             <div class="buttons-area">
-                <a href="/"><p class="a_text">Carrito</p><span class="material-symbols-rounded">shopping_cart</span></a>
-                <a href="/login"><p class="a_text">Cuenta</p><span class="material-symbols-rounded" id="bugfix_lenght">person</span></a>
+                <a href="/"><p class="a_text">Carrito</p><i class='bx bx-cart' ></i></a>
+                <a href="/login"><p class="a_text">Cuenta</p><i class='bx bx-user' ></i></a>
             </div>
     </header>
 </template>
 
 <script>
+import 'boxicons/css/boxicons.min.css';
+
 export default {
     name: 'AppHeader',
 };
@@ -62,10 +64,9 @@ header h1 a {
     transition: all 0.3s ease-in-out;
     }
 
-.buttons-area a span {
+.buttons-area a i {
     font-size: 50px;
     transition: all 0.3s ease-in-out;
-    font-family: 'Material Symbols Rounded', sans-serif;
     font-weight: 100;
     }
 
@@ -94,7 +95,7 @@ header h1 a {
         display: inline;
         font-size: 20px;
     }
-    .buttons-area a span {
+    .buttons-area a i {
         font-size: 30px;
     }
     #bugfix_lenght {
