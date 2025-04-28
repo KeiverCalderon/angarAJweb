@@ -1,16 +1,18 @@
 <template>
     <div>
       <header>
-        <h1>Decolorvers Panel</h1>
-        
+      <h1>Decolorvers Panel</h1>
+      <button class="menu-toggle" @click="toggleMenu">
+        <i class="bx bx-menu"></i>
+      </button>
       </header>
-      <div class="menu-container">
+      <div class="menu-container" :class="{ active: isMenuOpen }">
         <VueSidebarMenuAkahon
           :menuIcon="'bx bxs-store-alt'"
           :menuSize="'50px'"
           :menuTitle="'Decolorvers'"
           :isUsedVueRouter="true"
-          @menu-item-clicked="fnRouteTo(link)"
+          @menu-item-clicked="fnRouteTo"
           :menuItems="
             [
               { name: 'Inicio', icon: 'bx bxs-home', link: '/admin/dashboard' },
@@ -40,7 +42,18 @@
     name: 'AdminPanel.vue',
     components: {VueSidebarMenuAkahon},
     data() {
-      return {}
+      return {
+        isMenuOpen: false
+      }
+    },
+    methods: {
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen
+    },
+    fnRouteTo(link) {
+      this.$router.push(link)
+      this.isMenuOpen = false
+      }
     }
   }
 </script>
@@ -61,13 +74,22 @@ header h1 {
   font-size: 2.3em;
 }
 
+.menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+}
+
 .menu-container {
   display: none;
   position: fixed;
 }
 
-main {
-  margin-left: -250px;
+.menu-container.active {
+  display: block;
 }
 
 .profile i{
@@ -86,10 +108,13 @@ main {
     display: none;
   }
   .menu-container {
-    display: block;
+    display: block !important;
+  }
+  .menu-toggle {
+    display: none;
   }
   main {
-  margin-left: 0px;
+  margin-left: 0;
 }
 }
 </style>
