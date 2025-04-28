@@ -34,7 +34,7 @@
 
 <style scoped>
 /* Importes */
-@import url(../variables.css);
+@import url(../assets/variables.css);
 /* First Mobile */
     *{
         font-family: "Cal Sans", sans-serif;
