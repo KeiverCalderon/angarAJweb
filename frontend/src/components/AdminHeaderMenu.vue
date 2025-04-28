@@ -1,11 +1,11 @@
 <template>
     <header>
-      <h1>Decolorvers Panel</h1>
-      <div class="menu-button">
-        <button @click="toggleMenu">
-            <i class="bx bx-menu"></i>
-        </button>
-      </div>
+        <h1>Decolorvers Panel</h1>
+        <div class="menu-button">
+            <button @click="toggleMenu">
+                <img src="../assets/menu.svg" alt="Menu">
+            </button>
+        </div>
     </header>
     <div id="lateral-menu" class="menu-close">
         <nav id="menu-options">
@@ -68,6 +68,41 @@ header{
     align-items: center;
     padding: 0px 10px;
     height: 70px;
+    background-color: var(--header-admin);
+}
+
+header h1{
+    font-weight: 500;
+    color: white;
+}
+
+header .menu-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--header-admin);
+}
+
+header .menu-button button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+header .menu-button img{
+    width: 30px;
+    height: 30px;
+}
+
+#menu-options{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
+    background-color: aquamarine;
 }
 
 #lateral-menu{
@@ -82,20 +117,32 @@ header{
     display: none;
 }
 
-.active{ 
-  background-color: red;
-  animation: pulsate-fwd-normal 400ms ease 0s 1 normal none; 
+#menu-options .active{ 
+    background-color: red;
+    animation: pulsate-fwd-normal 400ms ease 0s 1 normal none; 
 }
 
 /* Adaptación a pantallas más grandes */
 
-@media (min-width: 1000px) {
-    .menu-button{
+@media (min-width: 768px) {
+    header{
+        padding: 0px 20px;
+    }
+
+    header .menu-button{
         display: none;
     }
     .menu-close{
         position: relative;
         display: block;
+    }
+}
+
+/* Adaptación a pantallas más pequeñas */
+
+@media (max-width: 325px) {
+    header h1{
+        font-size: 1.5em;
     }
 }
 
