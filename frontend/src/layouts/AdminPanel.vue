@@ -58,7 +58,7 @@
   }
 </script>
 <style>
-header {
+/* header {
   height: 70px;
   display: flex;
   justify-content: space-between;
@@ -116,5 +116,5 @@ header h1 {
   main {
   margin-left: 0;
 }
-}
+} */
 </style>

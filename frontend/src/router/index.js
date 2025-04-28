@@ -3,20 +3,30 @@ import IndexView from '@/views/IndexView.vue';
 import Login from '../views/LoginView.vue';
 import Register from '../views/RegisterView.vue';
 import AdminPanel from '../layouts/AdminPanel.vue';
+import ClientPanel from '../layouts/ClientPanel.vue';
 import Dashboard from '../views/admin/DashboardView.vue'
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/', component: IndexView },
     { path: '/login', component: Login },
     { path: '/register', component: Register },
+    { 
+      path: '/',
+      component: ClientPanel,
+      children: [
+        {
+          path: '',
+          component: IndexView,
+        },
+      ]
+    },
     {
       path: '/admin',
       component: AdminPanel,
       children: [
         {
-          path: 'dashboard',
+          path: '',
           component: Dashboard
         },
       ]
