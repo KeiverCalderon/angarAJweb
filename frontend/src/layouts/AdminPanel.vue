@@ -1,23 +1,15 @@
 <template>
-    <div>
-      <header>
-      <h1>Decolorvers Panel</h1>
-      <button class="menu-toggle" @click="toggleMenu">
-        <i class="bx bx-menu"></i>
-      </button>
-      </header>
-      <div class="menu-container" :class="{ active: isMenuOpen }">
-      </div>
-      <main>
-        <router-view />
-      </main>
-    </div>
+  <AdminHeaderMenu/>
+    <main>
+      <router-view />
+    </main>
 </template>
 <script>
+import AdminHeaderMenu from '../components/AdminHeaderMenu.vue'
   
   export default {
     name: 'AdminPanel.vue',
-    // components: {VueSidebarMenuAkahon},
+    components: {AdminHeaderMenu,},
     data() {
       return {
         isMenuOpen: false
@@ -34,5 +26,5 @@
     }
   }
 </script>
-<style>
+<style scoped>
 </style>
