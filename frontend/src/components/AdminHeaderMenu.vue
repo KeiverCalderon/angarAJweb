@@ -144,7 +144,7 @@ header .menu-button img{
     align-items: center;
     padding: 5px 10px;
     gap: 15px;
-    transition: transform 0.4s ease; 
+    transition: transform 0.3s ease; 
 }
 
 #menu-options li .logout i{
