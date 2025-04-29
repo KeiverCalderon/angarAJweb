@@ -62,43 +62,16 @@ export default {
             menuVisible: false,
         };
     },
-    mounted() {
-    // Llama a handleResize al cargar la página para ajustar el menú según el tamaño inicial
-    this.handleResize();
-
-    // Escucha los cambios en el tamaño de la ventana
-    window.addEventListener('resize', this.handleResize);
-    },
     methods: {
-        handleResize() {
-        const menu = document.getElementById('lateral-menu');
-        const isWideScreen = window.matchMedia('(min-width: 768px)').matches;
-
-        if (isWideScreen) {
-            // Si la pantalla es mayor a 768px, muestra el menú
-            this.menuVisible = true;
-            menu.style.display = 'block';
-            menu.classList.remove('menu-close');
-        } else {
-            // Si la pantalla es menor a 768px, oculta el menú
-            this.menuVisible = false;
-            menu.style.display = 'none';
-            menu.classList.add('menu-close');
-        }
-    },
         toggleMenu() {
             this.menuVisible = !this.menuVisible;
             const menu = document.getElementById('lateral-menu');
-            if (this.menuVisible) {
-                menu.style.display = 'block';
-                menu.classList.remove('menu-close');
-            } 
-            else {
-                menu.classList.add('menu-close');
-
-                setTimeout(() => {
-                    menu.style.display = 'none';
-                }, 300);
+            if (window.innerWidth < 768) {
+                if (this.menuVisible) {
+                menu.classList.add('menu-open');
+                } else {
+                    menu.classList.remove('menu-open');
+                }
             }
         },
     },
@@ -155,7 +128,14 @@ header .menu-button img{
     top: 70px;
     height: 100%;
     width: 230px;
-    animation: slideIn 0.4s ease-in-out;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+#lateral-menu.menu-open {
+    transform: translateX(0);
+    opacity: 1;
 }
 
 #menu-options{
@@ -204,9 +184,9 @@ header .menu-button img{
     background-color: #393E46;
     border-radius: var(--border-radius-box);
     position: fixed;
-    bottom: 20px;
+    bottom: 100px;
     z-index: 5000;
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeIn 1s ease-in-out forwards;
 }
 
 .user-info i{
@@ -226,13 +206,6 @@ header .menu-button img{
     color: #ffffff;
     margin: 0;
     padding: 0 10px;
-}
-
-.menu-close {
-    opacity: 0;
-    transform: translateX(-100%);
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    display: none; 
 }
 
 .active i{
@@ -263,15 +236,17 @@ header .menu-button img{
         display: none;
     }
     .menu-close{
-        position: absolute;
+        position: relative;
         display: block;
     }
     #menu-options .user-info{
         display: none;
     }
     #lateral-menu{
-        position: absolute;
-        animation: none;
+        transform: translateX(0) !important;
+        opacity: 1 !important;
+        transition: none !important;
+        display: block !important;
         width: 250px;
         overflow-y: hidden;
     }
