@@ -244,6 +244,11 @@ header .menu-button img{
     100% { opacity: 1; transform: translateX(0); }
     }
 
+@keyframes slideOut {
+    0% { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(-200px); }
+    }
+
 @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(100px); }
     100% { opacity: 1; transform: translateY(0); }
