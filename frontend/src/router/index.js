@@ -4,7 +4,7 @@ import Login from '../views/LoginView.vue';
 import Register from '../views/RegisterView.vue';
 import AdminPanel from '../layouts/AdminPanel.vue';
 import ClientPanel from '../layouts/ClientPanel.vue';
-import Dashboard from '../views/admin/DashboardView.vue'
+import Dashboard from '../views/DashboardView.vue'
 
 const router = createRouter({
   history: createWebHistory(),

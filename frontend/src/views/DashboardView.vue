@@ -1,6 +1,8 @@
 <template>
     <div id="dashboard">
-        <div id="div1">div1</div>
+        <div id="div1">
+            <PendingOrders />
+        </div>
         <div id="div2">div2</div>
         <div id="div3">div3</div>
         <div id="div4">div4</div>
@@ -8,18 +10,31 @@
         <div id="div6">div6</div>
     </div>
 </template>
+<script>
+import PendingOrders from '../components/widgets/PendingOrders.vue';
+export default {
+    name: 'DashboardView',
+    components: {
+        PendingOrders,
+    },
+};
+</script>
 <style scoped>
     #dashboard {
+        margin: 20px 0;
+        box-sizing: border-box;
         display: grid;
         grid-template-rows: repeat(6, 1fr);
         grid-template-columns: 1fr;
-        gap: 20px 0px;
+        gap: 20px 20px;
         width: 100%;
         height: 100%;
     }
     #div1 {
         grid-area: 1 / 1 / 2 / 2;
-        background-color: rgba(222,191,42, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     #div2 {
         grid-area: 2/1/3/2;
@@ -43,7 +58,7 @@
     }
 
 /* Adaptación a pantallas más grandes */
-@media (min-width: 550px) and (max-width: 800px) {
+@media (min-width: 550px) {
     #dashboard {
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 1fr);
