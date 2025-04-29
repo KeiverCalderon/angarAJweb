@@ -1,8 +1,9 @@
 :root {
   /* Colores */
-    --boton: #7A1CAC;
-    --boton-hover: #7100ea;
-    --url:#673cca;
+    --letras: #660236;
+    --boton: #a91a4c;
+    --boton-hover: #86143c;
+    --url:#ae2f4f;
     --principal:#761a9b;
     --fondo:#FFF7F7;
     --tarjeta:#ffffff;

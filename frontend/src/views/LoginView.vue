@@ -66,7 +66,7 @@
     }
 
     .logo-div p{
-        color: #660261;
+        color: var(--letras);
         font-size: 1.5em;
         text-align: center;
         margin-top: 10px;
