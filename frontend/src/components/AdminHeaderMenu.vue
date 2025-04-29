@@ -115,6 +115,7 @@ header .menu-button img{
     left: 0px;
     top: 70px;
     height: 100%;
+    animation: slideIn 0.4s ease-in-out;
 }
 
 #menu-options{
@@ -162,6 +163,7 @@ header .menu-button img{
     position: fixed;
     bottom: 20px;
     z-index: 5000;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .user-info i{
@@ -222,6 +224,9 @@ header .menu-button img{
     #menu-options .user-info{
         display: none;
     }
+    #lateral-menu{
+        animation: none;
+    }
 }
 
 /* Adaptación a pantallas más pequeñas */
@@ -234,5 +239,19 @@ header .menu-button img{
 
 /* animaciones */
 
-@keyframes pulsate-fwd-normal {0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1);} }
+@keyframes pulsate-fwd-normal {
+    0% { transform: scale(1); } 
+    50% { transform: scale(1.1); } 
+    100% { transform: scale(1);}
+    }
+
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateX(-200px); }
+    100% { opacity: 1; transform: translateX(0); }
+    }
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(100px); }
+    100% { opacity: 1; transform: translateY(0); }
+    }
 </style>
