@@ -1,6 +1,13 @@
 <template>
     <header>
         <h1>Administración ‎ Angar</h1>
+        <div class="user-info">
+            <i class='bx bx-user'></i>
+            <div class="user-data">
+                <h2>{{ usuario }}</h2>
+                <p>{{ rol }}</p>
+            </div>
+        </div>
         <div class="menu-button">
             <button @click="toggleMenu">
                 <img src="../assets/menu.svg" alt="Menu">
@@ -78,6 +85,9 @@ header h1{
     font-weight: 500;
     color: #ffffff;
 }
+header .user-info{
+    display: none;
+    }
 
 header .menu-button{
     display: flex;
@@ -143,7 +153,7 @@ header .menu-button img{
     animation: pulsate-fwd-normal 400ms ease 0s 1 normal none; 
 }
 
-.user-info{
+#menu-options .user-info{
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -196,7 +206,12 @@ header .menu-button img{
     header{
         padding: 0px 20px;
     }
-
+    header .user-info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
     header .menu-button{
         display: none;
     }
@@ -204,7 +219,7 @@ header .menu-button img{
         position: relative;
         display: block;
     }
-    .user-info{
+    #menu-options .user-info{
         display: none;
     }
 }
