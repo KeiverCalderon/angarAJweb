@@ -57,7 +57,30 @@ export default {
             menuVisible: false,
         };
     },
+    mounted() {
+    // Llama a handleResize al cargar la página para ajustar el menú según el tamaño inicial
+    this.handleResize();
+
+    // Escucha los cambios en el tamaño de la ventana
+    window.addEventListener('resize', this.handleResize);
+    },
     methods: {
+        handleResize() {
+        const menu = document.getElementById('lateral-menu');
+        const isWideScreen = window.matchMedia('(min-width: 768px)').matches;
+
+        if (isWideScreen) {
+            // Si la pantalla es mayor a 768px, muestra el menú
+            this.menuVisible = true;
+            menu.style.display = 'block';
+            menu.classList.remove('menu-close');
+        } else {
+            // Si la pantalla es menor a 768px, oculta el menú
+            this.menuVisible = false;
+            menu.style.display = 'none';
+            menu.classList.add('menu-close');
+        }
+    },
         toggleMenu() {
             this.menuVisible = !this.menuVisible;
             const menu = document.getElementById('lateral-menu');
@@ -121,6 +144,7 @@ header .menu-button img{
     left: 0px;
     top: 70px;
     height: 100%;
+    width: 230px;
     animation: slideIn 0.4s ease-in-out;
 }
 
@@ -228,18 +252,19 @@ header .menu-button img{
         display: none;
     }
     .menu-close{
-        position: relative;
+        position: absolute;
         display: block;
     }
     #menu-options .user-info{
         display: none;
     }
     #lateral-menu{
+        position: absolute;
         animation: none;
     }
 }
 
-@media (max-height: 650px) {
+@media (max-height: 620px) {
     #menu-options ul{
         padding-bottom: 200px;
     }
