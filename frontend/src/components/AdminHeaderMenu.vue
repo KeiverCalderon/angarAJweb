@@ -1,6 +1,6 @@
 <template>
     <header>
-        <h1>Decolorvers Panel</h1>
+        <h1>Administración ‎ Angar</h1>
         <div class="menu-button">
             <button @click="toggleMenu">
                 <img src="../assets/menu.svg" alt="Menu">
@@ -18,14 +18,16 @@
                 <li><a href="/admin/users" :class="{ active: $route.path === '/admin/users' }"><i class='bx bx-user'></i> Clientes</a></li>
                 <li><a href="/admin/admins" :class="{ active: $route.path === '/admin/admins' }"><i class='bx bx-user'></i> Administradores</a></li>
                 <li><a href="/admin/supervisors" :class="{ active: $route.path === '/admin/supervisors' }"><i class='bx bx-user'></i> Supervisores</a></li>
-                <li><a href="/admin/settings" :class="{ active: $route.path === '/admin/settings' }"><i class='bx bx-cog'></i> Configuración</a></li>
-                <li><a><i class='bx bx-log-out'></i> Cerrar sesión</a></li>
+                <li><a href="" class="logout"><i class='bx bx-log-out'></i>Cerrar sesión</a></li>
             </ul>
+            <div class="user-info">
+                <i class='bx bx-user'></i>
+                <div class="user-data">
+                    <h2>{{ usuario }}</h2>
+                    <p>{{ rol }}</p>
+                </div>
+            </div>
         </nav>
-        <div class="user-info">
-            <h2>{{ usuario }}</h2>
-            <p>{{ rol }}</p>
-        </div>
     </div>
 </template>
 <script>
@@ -72,8 +74,9 @@ header{
 }
 
 header h1{
+    font-size: 1.5em;
     font-weight: 500;
-    color: white;
+    color: #ffffff;
 }
 
 header .menu-button{
@@ -96,29 +99,94 @@ header .menu-button img{
     height: 30px;
 }
 
-#menu-options{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 10px;
-    background-color: aquamarine;
-}
-
 #lateral-menu{
-    background-color: rgb(170, 170, 170);
+    background-color: #393E46;
     position: fixed;
     left: 0px;
     top: 70px;
     height: 100%;
 }
 
+#menu-options{
+    padding: 1px 0;
+    padding-left: 20px;
+    width: 230px;  
+    background-color: var(--header-admin);
+    height: 100%;
+}
+
+#menu-options ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+#menu-options li{
+    margin: 20px 0px;
+}
+
+#menu-options li a{
+    text-decoration: none;
+    font-size: 1.1em;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    gap: 15px;
+}
+
+#menu-options li .logout i{
+    color: #df4848;
+}
+
+#menu-options li a:hover{
+    animation: pulsate-fwd-normal 400ms ease 0s 1 normal none; 
+}
+
+.user-info{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: #393E46;
+    border-radius: var(--border-radius-box);
+    position: fixed;
+    bottom: 20px;
+    z-index: 5000;
+}
+
+.user-info i{
+    font-size: 2em;
+    color: #ffffff;
+    padding-left: 25px;
+}
+.user-data{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+.user-data h2, .user-data p{
+    font-size: 1em;
+    color: #ffffff;
+    margin: 0;
+    padding: 0 10px;
+}
+
 .menu-close{
     display: none;
 }
 
-#menu-options .active{ 
-    background-color: red;
+.active i{
+    color: var(--header-admin);
+    background-color: #ffffff;
+    padding: 5px 5px;
+    margin: -5px;
+    border-radius: var(--border-radius);
+}
+
+.active:hover{
+    border-radius: var(--border-radius);
     animation: pulsate-fwd-normal 400ms ease 0s 1 normal none; 
 }
 
@@ -136,13 +204,16 @@ header .menu-button img{
         position: relative;
         display: block;
     }
+    .user-info{
+        display: none;
+    }
 }
 
 /* Adaptación a pantallas más pequeñas */
 
-@media (max-width: 325px) {
+@media (max-width: 302px) {
     header h1{
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
 }
 
