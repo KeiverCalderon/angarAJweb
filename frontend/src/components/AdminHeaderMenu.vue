@@ -129,6 +129,7 @@ header .menu-button img{
     padding-left: 20px;
     width: 230px;  
     background-color: var(--header-admin);
+    overflow-x: auto;
     height: 100%;
 }
 
@@ -199,10 +200,6 @@ header .menu-button img{
     display: none; 
 }
 
-.menu-closing {
-    animation: slideOut 1s ease-in-out forwards;
-}
-
 .active i{
     color: var(--header-admin);
     background-color: #ffffff;
@@ -240,6 +237,15 @@ header .menu-button img{
     #lateral-menu{
         animation: none;
     }
+}
+
+@media (max-height: 650px) {
+    #menu-options ul{
+        padding-bottom: 200px;
+    }
+    #menu-options li a:hover{
+    transform: scale(1.0);
+}
 }
 
 /* Adaptación a pantallas más pequeñas */
