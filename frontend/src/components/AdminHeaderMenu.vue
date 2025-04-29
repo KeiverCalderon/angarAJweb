@@ -144,6 +144,7 @@ header .menu-button img{
     align-items: center;
     padding: 5px 10px;
     gap: 15px;
+    transition: transform 0.4s ease; 
 }
 
 #menu-options li .logout i{
@@ -151,7 +152,7 @@ header .menu-button img{
 }
 
 #menu-options li a:hover{
-    animation: pulsate-fwd-normal 400ms ease 0s 1 normal none; 
+    transform: scale(1.1);
 }
 
 #menu-options .user-info{
@@ -199,7 +200,6 @@ header .menu-button img{
 
 .active:hover{
     border-radius: var(--border-radius);
-    animation: pulsate-fwd-normal 400ms ease 0s 1 normal none; 
 }
 
 /* Adaptación a pantallas más grandes */
@@ -238,12 +238,6 @@ header .menu-button img{
 }
 
 /* animaciones */
-
-@keyframes pulsate-fwd-normal {
-    0% { transform: scale(1); } 
-    50% { transform: scale(1.1); } 
-    100% { transform: scale(1);}
-    }
 
 @keyframes slideIn {
     0% { opacity: 0; transform: translateX(-200px); }
