@@ -171,6 +171,7 @@ header .menu-button img{
     list-style: none;
     padding: 0px;
     margin: 0px;
+    overflow-x: hidden;
 }
 
 #menu-options li{
@@ -272,6 +273,7 @@ header .menu-button img{
         position: absolute;
         animation: none;
         width: 250px;
+        overflow-y: hidden;
     }
     main{
         width: calc(100% - 250px);
