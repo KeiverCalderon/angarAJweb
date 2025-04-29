@@ -62,9 +62,15 @@ export default {
             this.menuVisible = !this.menuVisible;
             const menu = document.getElementById('lateral-menu');
             if (this.menuVisible) {
+                menu.style.display = 'block';
                 menu.classList.remove('menu-close');
-            } else {
+            } 
+            else {
                 menu.classList.add('menu-close');
+
+                setTimeout(() => {
+                    menu.style.display = 'none';
+                }, 300);
             }
         },
     },
@@ -186,8 +192,15 @@ header .menu-button img{
     padding: 0 10px;
 }
 
-.menu-close{
-    display: none;
+.menu-close {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    display: none; 
+}
+
+.menu-closing {
+    animation: slideOut 1s ease-in-out forwards;
 }
 
 .active i{
