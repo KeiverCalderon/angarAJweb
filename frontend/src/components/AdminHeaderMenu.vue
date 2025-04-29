@@ -28,7 +28,7 @@
                     <li><a href="/admin/supervisors" :class="{ active: $route.path === '/admin/supervisors' }"><i class='bx bx-user'></i> Supervisores</a></li>
                     <li><a href="" class="logout"><i class='bx bx-log-out'></i>Cerrar sesión</a></li>
                 </ul>
-                <div class="user-info">
+                <div id="user-info" class="user-info">
                     <i class='bx bx-user'></i>
                     <div class="user-data">
                         <h2>{{ usuario }}</h2>
@@ -66,11 +66,14 @@ export default {
         toggleMenu() {
             this.menuVisible = !this.menuVisible;
             const menu = document.getElementById('lateral-menu');
+            const userInfo = document.getElementById('user-info');
             if (window.innerWidth < 768) {
                 if (this.menuVisible) {
                 menu.classList.add('menu-open');
+                userInfo.classList.add('menu-open');
                 } else {
                     menu.classList.remove('menu-open');
+                    userInfo.classList.remove('menu-open');
                 }
             }
         },
@@ -186,7 +189,14 @@ header .menu-button img{
     position: fixed;
     bottom: 100px;
     z-index: 5000;
-    animation: fadeIn 1s ease-in-out forwards;
+    transform: translateY(200%);
+    opacity: 0;
+    transition: transform 1s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+#user-info.menu-open {
+    transform: translateX(0);
+    opacity: 1;
 }
 
 .user-info i{
@@ -275,18 +285,4 @@ header .menu-button img{
 
 /* animaciones */
 
-@keyframes slideIn {
-    0% { opacity: 0; transform: translateX(-200px); }
-    100% { opacity: 1; transform: translateX(0); }
-    }
-
-@keyframes slideOut {
-    0% { opacity: 1; transform: translateX(0); }
-    100% { opacity: 0; transform: translateX(-200px); }
-    }
-
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(100px); }
-    100% { opacity: 1; transform: translateY(0); }
-    }
 </style>
