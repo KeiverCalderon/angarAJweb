@@ -14,27 +14,32 @@
             </button>
         </div>
     </header>
-    <div id="lateral-menu" class="menu-close">
-        <nav id="menu-options">
-            <ul>
-                <li><a href="/admin" :class="{ active: $route.path === '/admin' }"><i class='bx bx-home'></i> Inicio</a></li>
-                <li><a href="/admin/products" :class="{ active: $route.path === '/admin/products' }"><i class='bx bx-box'></i> Productos</a></li>
-                <li><a href="/admin/categories" :class="{ active: $route.path === '/admin/categories' }"><i class='bx bx-category'></i> Categorías</a></li>
-                <li><a href="/admin/orders" :class="{ active: $route.path === '/admin/orders' }"><i class='bx bx-cart'></i> Pedidos</a></li>
-                <li><a href="/admin/sells" :class="{ active: $route.path === '/admin/sells' }"><i class='bx bx-cart'></i> Ventas</a></li>
-                <li><a href="/admin/users" :class="{ active: $route.path === '/admin/users' }"><i class='bx bx-user'></i> Clientes</a></li>
-                <li><a href="/admin/admins" :class="{ active: $route.path === '/admin/admins' }"><i class='bx bx-user'></i> Administradores</a></li>
-                <li><a href="/admin/supervisors" :class="{ active: $route.path === '/admin/supervisors' }"><i class='bx bx-user'></i> Supervisores</a></li>
-                <li><a href="" class="logout"><i class='bx bx-log-out'></i>Cerrar sesión</a></li>
-            </ul>
-            <div class="user-info">
-                <i class='bx bx-user'></i>
-                <div class="user-data">
-                    <h2>{{ usuario }}</h2>
-                    <p>{{ rol }}</p>
+    <div class="content">
+        <div id="lateral-menu" class="menu-close">
+            <nav id="menu-options">
+                <ul>
+                    <li><a href="/admin" :class="{ active: $route.path === '/admin' }"><i class='bx bx-home'></i> Inicio</a></li>
+                    <li><a href="/admin/products" :class="{ active: $route.path === '/admin/products' }"><i class='bx bx-box'></i> Productos</a></li>
+                    <li><a href="/admin/categories" :class="{ active: $route.path === '/admin/categories' }"><i class='bx bx-category'></i> Categorías</a></li>
+                    <li><a href="/admin/orders" :class="{ active: $route.path === '/admin/orders' }"><i class='bx bx-cart'></i> Pedidos</a></li>
+                    <li><a href="/admin/sells" :class="{ active: $route.path === '/admin/sells' }"><i class='bx bx-cart'></i> Ventas</a></li>
+                    <li><a href="/admin/users" :class="{ active: $route.path === '/admin/users' }"><i class='bx bx-user'></i> Clientes</a></li>
+                    <li><a href="/admin/admins" :class="{ active: $route.path === '/admin/admins' }"><i class='bx bx-user'></i> Administradores</a></li>
+                    <li><a href="/admin/supervisors" :class="{ active: $route.path === '/admin/supervisors' }"><i class='bx bx-user'></i> Supervisores</a></li>
+                    <li><a href="" class="logout"><i class='bx bx-log-out'></i>Cerrar sesión</a></li>
+                </ul>
+                <div class="user-info">
+                    <i class='bx bx-user'></i>
+                    <div class="user-data">
+                        <h2>{{ usuario }}</h2>
+                        <p>{{ rol }}</p>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
+        <main>
+        <router-view />
+        </main>
     </div>
 </template>
 <script>
@@ -136,6 +141,11 @@ header .menu-button button{
 header .menu-button img{
     width: 30px;
     height: 30px;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
 }
 
 #lateral-menu{
@@ -261,6 +271,11 @@ header .menu-button img{
     #lateral-menu{
         position: absolute;
         animation: none;
+        width: 250px;
+    }
+    main{
+        width: calc(100% - 250px);
+        margin-left: 250px;
     }
 }
 
