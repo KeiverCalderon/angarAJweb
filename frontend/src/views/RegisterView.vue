@@ -39,6 +39,7 @@
     *{
         font-family: "Cal Sans", sans-serif;
     }
+
     .login-div {
         display: flex;
         flex-direction: column;
@@ -49,6 +50,7 @@
         background-color: var(--fondo);
         gap: 20px;
     }
+
     h1 {
         color: #333;
         margin-bottom: 40px;
@@ -66,6 +68,7 @@
         max-width: 400px;
         animation: fade-in-normal 1s ease 0s 1 normal none;
     }
+
     .logo-div img {
         width: 100px;
         height: auto;
@@ -94,30 +97,39 @@
         justify-content: center;
         min-width: 280px;
         width: 80%;
-        max-width: 400px;
+        max-width: 350px;
         background-color: var(--tarjeta);
-        padding: 20px;
+        padding: 20px 35px;
         border-radius: var(--border-radius-box);
         box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
         margin-bottom: 20px;
         animation: fade-in-normal 1s ease 0s 1 normal none;
     }
+
     .label-input {
         display: flex;
         flex-direction: column;
         margin-bottom: 25px;
         width: 90%;
     }
+
     .form-label {
         display: none;
     }
+
     .form-input {
         font-size: 1em;
-        padding: 12px 12px;
-        border-radius: var(--border-radius);
-        border: 1px solid #4e4e4e;
+        padding: 12px 1px;
+        border: none;
+        border-bottom: 1px solid #4e4e4e;
         font-family: Arial, Helvetica, sans-serif;
+        outline: none;
     }
+
+    .form-input:focus {
+        border-bottom: 2px solid var(--boton);
+    }
+
     .send-form-button {
         background-color: var(--boton);
         color: white;
@@ -125,7 +137,8 @@
         border: none;
         border-radius: var(--border-radius);
         cursor: pointer;
-        margin-bottom: 20px;
+        margin-top: 10px;
+        margin-bottom: 15px;
         box-sizing: border-box;
         min-width: 250px;
         width: 90%;
@@ -134,6 +147,7 @@
         font-weight: 600;
         font-family: Arial, Helvetica, sans-serif;
     }
+
     .send-form-button:hover {
         background-color: var(--boton-hover);
     }
