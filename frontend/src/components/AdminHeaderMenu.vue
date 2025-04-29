@@ -235,6 +235,8 @@ header .menu-button img{
 @media (min-width: 768px) {
     header{
         padding: 0px 20px;
+        position:sticky;
+        top: 0px;
     }
     header .user-info{
         display: flex;
@@ -266,7 +268,7 @@ header .menu-button img{
     }
 }
 
-@media (max-height: 620px) {
+@media (max-height: 630px) and (max-width: 768px) {
     #menu-options ul{
         padding-bottom: 200px;
     }
