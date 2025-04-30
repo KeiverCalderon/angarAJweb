@@ -6,7 +6,7 @@
             perPage: 1,
             arrows: true,
             autoplay: true,
-            interval: 5000,
+            interval: 10000,
             }"
         >
             <SplideSlide>
@@ -76,7 +76,6 @@ export default {
     width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
-    max-width: 1000px;
 }
 }
 

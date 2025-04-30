@@ -13,7 +13,7 @@ export default {
 <style scoped>
 .area_banner_category{
     width: 100%;
-    height: 300px;
+    height: 290px;
     position: relative;
     overflow: hidden;
     text-align: center;
