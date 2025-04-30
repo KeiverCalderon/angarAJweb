@@ -1,6 +1,6 @@
 <template>
     <header>
-            <h1><a href="/">Decolorvers</a></h1>
+            <h1><a href="/"><img src="../assets/logo.png" alt=""></a></h1>
             <div class="buttons-area">
                 <a href="/"><p class="a_text">Carrito</p><i class='bx bx-cart' ></i></a>
                 <a href="/login"><p class="a_text">Cuenta</p><i class='bx bx-user' ></i></a>
@@ -39,6 +39,15 @@ header h1 {
 header h1 a {
     text-decoration: none;
     color: #202020;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+h1 a img{
+    height: 80px;
+    width: 200px;
     transition: all 0.3s ease-in-out;
     }
 
