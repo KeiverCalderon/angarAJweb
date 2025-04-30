@@ -58,10 +58,38 @@ export default {
     }
 
 /* Adaptación a pantallas más grandes */
-@media (min-width: 550px) {
+@media (min-width: 600px) {
     #dashboard {
-        grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 100%;
+        height: 100%;
+    }
+    #div1 {
+        grid-area: 1 / 1 / 2 / 3;
+    }
+    #div2 {
+        grid-area: 2/1/3/2;
+    }
+    #div3 {
+        grid-area: 2/2/3/3;
+    }
+    #div4 {
+        grid-area: 3/1/4/2;
+    }
+    #div5 {
+        grid-area: 3/2/4/3;
+    }
+    #div6 {
+        grid-area: 4/1/5/2;
+    }
+}
+
+@media (min-width: 1000px) {
+    #dashboard {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 20px;
         width: 100%;
         height: 100%;

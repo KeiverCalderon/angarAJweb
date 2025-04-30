@@ -124,6 +124,10 @@ header .menu-button img{
     flex-direction: row;
 }
 
+main{
+    width: 100%;
+}
+
 #lateral-menu{
     background-color: var(--header-admin);
     position: fixed;
