@@ -1,9 +1,11 @@
 <template>
     <div id="dashboard">
         <div id="div1">
-            <PendingOrders />
+            <PendingOrders :texto="'Pedidos'"/>
         </div>
-        <div id="div2">div2</div>
+        <div id="div2">
+            <PendingOrders :texto="'Productos'"/>
+        </div>
         <div id="div3">div3</div>
         <div id="div4">div4</div>
         <div id="div5">div5</div>
@@ -21,7 +23,6 @@ export default {
 </script>
 <style scoped>
     #dashboard {
-        margin: 20px 0;
         box-sizing: border-box;
         display: grid;
         grid-template-rows: repeat(6, 1fr);
@@ -29,16 +30,20 @@ export default {
         gap: 20px 20px;
         width: 100%;
         height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
     }
-    #div1 {
-        grid-area: 1 / 1 / 2 / 2;
+
+    #dashboard div{
         display: flex;
         justify-content: center;
         align-items: center;
     }
+    #div1 {
+        grid-area: 1 / 1 / 2 / 2;
+    }
     #div2 {
         grid-area: 2/1/3/2;
-        background-color: rgba(53,221,80, 0.5);
     }
     #div3 {
         grid-area: 3/1/4/2;
@@ -98,7 +103,7 @@ export default {
         grid-area: 1 / 1 / 2 / 3;
     }
     #div2 {
-        grid-area: 2/1/3/2;
+        grid-area: 1/3/1/3;
     }
     #div3 {
         grid-area: 2/2/3/3;

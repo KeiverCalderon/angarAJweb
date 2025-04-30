@@ -2,8 +2,8 @@
     <div class="widget">
         <div class="widget-content">
             <div class="notification">
-                <h2>Pedidos Pendientes</h2>
-                <p>{{ cantidad_pedidos }}</p>
+                <h2>{{ texto }}</h2>
+                <p>{{ valor }}</p>
             </div>
             <a href="/admin/orders" class="go-button">Ver Ahora <i class='bx bxs-right-top-arrow-circle' style='color:#ffffff; font-size: 30px;' ></i></a>
         </div>
@@ -12,7 +12,11 @@
 <script>
 export default {
     props: {
-        cantidad_pedidos: {
+        texto: {
+            type:String,
+            default: 'Error al Cargar el Widget',
+        },
+        valor: {
             type:String,
             default: '0',
         },
@@ -28,8 +32,8 @@ export default {
         flex-direction: column;
         padding: 20px;
         box-sizing: border-box;
-        width: 90%;
-        height: 90%;
+        width: 100%;
+        height: 100%;
         border-radius: 20px;
         background: linear-gradient(to top right, #4b5563, #171717, #020617);
         margin: 0;
