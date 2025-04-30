@@ -1,10 +1,10 @@
 <template>
     <div id="dashboard">
         <div id="div1">
-            <PendingOrders :texto="'Pedidos'"/>
+            <SimpleWidget :texto="'Pedidos'"/>
         </div>
         <div id="div2">
-            <PendingOrders :texto="'Productos'"/>
+            <SimpleWidget :texto="'Productos'"/>
         </div>
         <div id="div3">div3</div>
         <div id="div4">div4</div>
@@ -13,11 +13,11 @@
     </div>
 </template>
 <script>
-import PendingOrders from '../components/widgets/PendingOrders.vue';
+import SimpleWidget from '../components/widgets/SimpleWidget.vue';
 export default {
     name: 'DashboardView',
     components: {
-        PendingOrders,
+        SimpleWidget,
     },
 };
 </script>
@@ -27,10 +27,12 @@ export default {
         display: grid;
         grid-template-rows: repeat(6, 1fr);
         grid-template-columns: 1fr;
-        gap: 20px 20px;
+        gap: 30px 30px;
         width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
         height: 100%;
-        padding: 20px;
+        padding: 40px;
         box-sizing: border-box;
     }
 
@@ -67,7 +69,7 @@ export default {
     #dashboard {
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 40px;
         width: 100%;
         height: 100%;
     }
@@ -95,7 +97,7 @@ export default {
     #dashboard {
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+        gap: 40px;
         width: 100%;
         height: 100%;
     }
