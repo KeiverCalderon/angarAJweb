@@ -125,7 +125,7 @@ header .menu-button img{
 }
 
 #lateral-menu{
-    background-color: #393E46;
+    background-color: var(--header-admin);
     position: fixed;
     left: 0px;
     top: 70px;
@@ -143,7 +143,7 @@ header .menu-button img{
 
 #menu-options{
     padding: 1px 0;
-    padding-left: 20px;
+    padding-left: 15px;
     width: 230px;  
     background-color: var(--header-admin);
     overflow-x: auto;
@@ -167,7 +167,7 @@ header .menu-button img{
     color: #ffffff;
     display: flex;
     align-items: center;
-    padding: 5px 10px;
+    padding: 5px 20px;
     gap: 15px;
     transition: transform 0.3s ease; 
 }

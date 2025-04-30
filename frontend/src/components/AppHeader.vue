@@ -33,7 +33,7 @@ header {
 header h1 {
     color: #202020;
     font-weight: 350;
-    font-size: 2.3em;
+    font-size: 1.5em;
     }
 
 header h1 a {
@@ -55,7 +55,7 @@ h1 a img{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     }
 
 .a_text{
@@ -68,13 +68,13 @@ h1 a img{
     justify-content: center;
     text-decoration: none;
     color: #202020;
-    height: 60px;
+    height: 50px;
     aspect-ratio: 1/1;
     transition: all 0.3s ease-in-out;
     }
 
 .buttons-area a i {
-    font-size: 50px;
+    font-size: 40px;
     transition: all 0.3s ease-in-out;
     font-weight: 100;
     }
@@ -94,13 +94,13 @@ h1 a img{
     header {
     padding: 5px 20px;
     }
-    .buttons-area {
-    gap: 20px;
-    }
 }
 
-@media (min-width:600px){
-    .a_text{
+@media (min-width:640px){
+    header h1 {
+        font-size: 2.3em;
+    }
+    .a_text {
         display: inline;
         font-size: 20px;
     }
