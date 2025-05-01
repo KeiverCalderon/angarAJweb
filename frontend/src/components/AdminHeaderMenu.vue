@@ -85,7 +85,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 10px;
+    padding: 5px 10px;
     height: 70px;
     background-color: var(--header-admin);
 }
@@ -143,6 +143,7 @@ main{
     transform: translateX(-100%);
     opacity: 0;
     transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
+    z-index: 1000;
 }
 
 #lateral-menu.menu-open {
