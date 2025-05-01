@@ -36,7 +36,7 @@ export default {
 <style scoped>
 .banner {
     width: 100%;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 80px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,7 +48,7 @@ export default {
 
 .carrousel_item{
     width: 100%;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 80px);
     aspect-ratio: 1/1;
     object-fit: cover;
 }
