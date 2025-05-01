@@ -3,9 +3,9 @@
         <div class="widget-content">
             <div class="notification">
                 <h2>{{ texto }}</h2>
-                <p>{{ valor }}</p>
+                <p :style="{ backgroundColor: color }">{{ valor }}</p>
             </div>
-            <a href="/admin/orders" class="go-button">Ver Ahora <i class='bx bxs-right-top-arrow-circle' style='color:#ffffff; font-size: 30px;' ></i></a>
+            <a :style="{ backgroundColor: color }" href="/admin/orders" class="go-button">Ver Ahora <i class='bx bxs-right-top-arrow-circle' style='color:#ffffff; font-size: 30px;' ></i></a>
         </div>
     </div>
 </template>
@@ -19,6 +19,10 @@ export default {
         valor: {
             type:String,
             default: '0',
+        },
+        color: {
+            type:String,
+            default: '#a91a4c',
         },
     },
     name: 'PendingOrders',
@@ -71,7 +75,6 @@ export default {
     }
 
     .notification p{
-        background-color: #a91a4c;
         border-radius: 50px;
         color: #ffffff;
         padding: 20px;
@@ -93,6 +96,5 @@ export default {
         font-size: 1em;
         text-decoration: none;
         color: white;
-        background-color: #a91a4c;
     }
 </style>

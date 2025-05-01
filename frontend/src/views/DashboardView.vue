@@ -4,12 +4,12 @@
             <SimpleWidget :texto="'Pedidos'"/>
         </div>
         <div id="div2">
-            <SimpleWidget :texto="'Productos'"/>
+            <SimpleWidget :texto="'Productos'" :color="'#003092'"/>
         </div>
-        <div id="div3">div3</div>
+        <!-- <div id="div3">div3</div>
         <div id="div4">div4</div>
         <div id="div5">div5</div>
-        <div id="div6">div6</div>
+        <div id="div6">div6</div> -->
     </div>
 </template>
 <script>
