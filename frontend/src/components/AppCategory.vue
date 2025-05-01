@@ -43,16 +43,24 @@ export default {
 .text-category{
     position: absolute;
     bottom: 0px;
-    left: 40px;
-    /* transform: translate(-50%, -50%); */
-    color: var(--principal);
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--texto-inverso);
     font-size: 2.5em;
     font-weight: 350;
     text-align: center;
     text-shadow: 
-        -1px -1px 0px rgb(44, 44, 44),
-        1px -1px 0px  rgb(44, 44, 44), 
-        -1px 1px 0px  rgb(44, 44, 44),  
-        1px 1px 0px  rgb(44, 44, 44); 
+        -1px -1px 0px var(--letras),
+        1px -1px 0px  var(--letras), 
+        -1px 1px 0px  var(--letras),  
+        1px 1px 0px  var(--letras); 
+}
+
+@media (min-width:768px){
+    .text-category{
+        transform: translateX(0);
+        bottom: 0px;
+        left: 40px; 
+    }
 }
 </style>
