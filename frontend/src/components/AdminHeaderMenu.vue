@@ -2,6 +2,7 @@
     <header>
         <h1>Administración ‎ Angar</h1>
         <div class="user-info">
+            <a href="/" class="return-store"><i class='bx bx-store'></i>Ver tienda</a>
             <i class='bx bx-user'></i>
             <div class="user-data">
                 <h2>{{ usuario }}</h2>
@@ -28,6 +29,9 @@
                     <li><a href="/admin/supervisors" :class="{ active: $route.path === '/admin/supervisors' }"><i class='bx bx-user'></i> Supervisores</a></li>
                     <li><a href="" class="logout"><i class='bx bx-log-out'></i>Cerrar sesión</a></li>
                 </ul>
+                <div id="return-store" class="return-store">
+                    <i class='bx bx-store'></i><a href="/">Ver tienda</a>
+                </div>
                 <div id="user-info" class="user-info">
                     <i class='bx bx-user'></i>
                     <div class="user-data">
@@ -67,13 +71,16 @@ export default {
             this.menuVisible = !this.menuVisible;
             const menu = document.getElementById('lateral-menu');
             const userInfo = document.getElementById('user-info');
+            const returnStore = document.getElementById('return-store');
             if (window.innerWidth < 768) {
                 if (this.menuVisible) {
                 menu.classList.add('menu-open');
                 userInfo.classList.add('menu-open');
+                returnStore.classList.add('menu-open');
                 } else {
                     menu.classList.remove('menu-open');
                     userInfo.classList.remove('menu-open');
+                    returnStore.classList.remove('menu-open');
                 }
             }
         },
@@ -95,6 +102,18 @@ header h1{
     font-weight: 500;
     color: #ffffff;
 }
+
+header a.return-store{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.1em;
+    background-color: #393E46;
+    border-radius: var(--border-radius-box);
+}
+
 header .user-info{
     display: none;
     }
@@ -179,7 +198,7 @@ main{
     align-items: center;
     padding: 5px 20px;
     gap: 15px;
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease;
 }
 
 #menu-options li .logout i{
@@ -197,7 +216,7 @@ main{
     background-color: #393E46;
     border-radius: var(--border-radius-box);
     position: fixed;
-    bottom: 100px;
+    bottom: 90px;
     z-index: 5000;
     transform: translateY(200%);
     opacity: 0;
@@ -240,6 +259,52 @@ main{
     border-radius: var(--border-radius);
 }
 
+#menu-options .return-store{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #393E46;
+    border-radius: var(--border-radius-box);
+    position: fixed;
+    padding: 10px 23px;
+    bottom: 150px;
+    z-index: 5000;
+    transform: translateY(260%);
+    opacity: 0;
+    transition: transform 1s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+#menu-options .return-store:hover{
+    animation: up 0.5s ease-in-out;
+}
+@keyframes up{
+    0%{transform: scale(1);}
+    100%{transform: scale(1.1);}
+}
+
+.return-store i{
+    font-size: 1.7em;
+    color: #ffffff;
+    padding-left: 5px;
+}
+
+.return-store a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #ffffff;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+#return-store.menu-open{
+    transform: translateX(0);
+    opacity: 1;
+}
+
 /* Adaptación a pantallas más grandes */
 
 @media (min-width: 768px) {
@@ -248,11 +313,29 @@ main{
         position:sticky;
         top: 0px;
     }
+    header a.return-store{
+        padding: 5px 10px;
+        margin: 0px 23px;
+        gap: 5px;
+        transition: transform 0.3s ease;
+    }
+    header a.return-store i{
+        font-size: 1.5em;
+    }
+    header a.return-store:hover{
+        transform: scale(1.1);
+    }
     header .user-info{
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row;
+    }
+    header .user-info i{
+        padding-left: 0;
+    }
+    header .user-data{
+        padding:0
     }
     header .menu-button{
         display: none;
@@ -275,6 +358,9 @@ main{
     main{
         width: calc(100% - 250px);
         margin-left: 250px;
+    }
+    #menu-options .return-store{
+        display: none;
     }
 }
 
