@@ -35,12 +35,12 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: var(--categorias);
+    background-color: var(--fondo);
     padding-bottom: 20px;
 }
 
 .area_categories h2 {
-    color: var(--tarjeta);
+    color: var(--letras);
     font-size: 2.5em;
     font-weight: 350;
     margin-bottom: 20px;
@@ -53,7 +53,7 @@ export default {
     height: 800px; 
     display: flex;
     flex-direction: column;
-    background-color: var(--categorias);
+    background-color: var(--fondo);
     text-align: center;
     gap: 20px;
 }
@@ -68,7 +68,7 @@ export default {
 
 .more-categories p {
     font-size: 1.3em;
-    color: white;
+    color: var(--letras);
 }
 
 .more-categories a {
@@ -76,7 +76,7 @@ export default {
     justify-content: center;
     align-items: center;
     background-color: var(--boton);
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     border-radius: var(--border-radius);
     box-sizing: border-box;

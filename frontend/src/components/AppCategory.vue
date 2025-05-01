@@ -1,6 +1,6 @@
 <template>
     <div class="area_banner_category">
-        <img class="image-category" src="../assets/banner_categoria.webp" alt="Banner de Categoría"/>
+        <img class="image-category" src="../assets/banner_categoria2.webp" alt="Banner de Categoría"/>
     </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
 <style scoped>
 .area_banner_category{
     width: 100%;
-    height: 290px;
+    height: 280px;
     position: relative;
     overflow: hidden;
     text-align: center;
@@ -24,7 +24,7 @@ export default {
 
 .image-category{
     width: 100%;
-    max-width: 400px;
+    max-width: 390px;
     height: 100%;
     object-fit: cover; 
     display: block;
