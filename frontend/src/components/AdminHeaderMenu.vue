@@ -130,6 +130,7 @@ main{
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+    height: calc(100vh - 70px);
 }
 
 #lateral-menu{
