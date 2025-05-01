@@ -36,10 +36,10 @@ def iniciar_sesion():
         
         # new_user = Usuarios.query.filter_by(usuario=usuario).first()
         # if new_user.check_password(contraseña):
-        #     session['sesion_iniciada'] = True
-        #     session['id_usuario'] = new_user.id
-        #     session.permanent = True
-        #     session.modified = True
+            # session['sesion_iniciada'] = True
+            # session['id_usuario'] = new_user.id
+            # session.permanent = True
+            # session.modified = True
         #     print(f"estado de la sesion:{session.get('sesion_iniciada')}")
 
         #     return jsonify({'mensaje': 'Sesión iniciada con exito', 'nombre': new_user.usuario}), 201

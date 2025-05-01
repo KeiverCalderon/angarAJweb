@@ -1,0 +1,5 @@
+SQLAlchemy
+bcrypt 
+Flask
+flask-cors
+Flask-SQLAlchemy

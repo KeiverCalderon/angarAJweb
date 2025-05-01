@@ -1,8 +1,6 @@
 from flask import Flask, Blueprint
 from flask_sqlalchemy import SQLAlchemy
-from routes import api_bp
 from flask_cors import CORS
-import os
 
 app = Flask(__name__)
 db = SQLAlchemy()
@@ -12,8 +10,8 @@ app.secret_key = "12345678"
 app.config['SESSION_COOKIE_SECURE'] = True  # Solo enviar cookies a través de HTTPS
 app.config['SESSION_COOKIE_SAMESITE'] = 'None'  # Permitir cookies en solicitudes cruzadas
 # Base de datos
-ruta_base_datos = os.path.abspath("dreamjectsDB.db")
-app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{ruta_base_datos}"
+ruta_base_datos = ""
+app.config['SQLALCHEMY_DATABASE_URI'] = ruta_base_datos
 db.init_app(app)
 CORS(app, supports_credentials=True)
 
