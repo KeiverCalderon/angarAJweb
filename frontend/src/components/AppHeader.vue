@@ -56,6 +56,7 @@ h1 a img{
     justify-content: center;
     align-items: center;
     gap: 5px;
+    padding: 5px 10px;
     }
 
 .a_text{
@@ -90,13 +91,10 @@ h1 a img{
 
 /* Adaptación a pantallas mas grandes */
 
-@media (min-width:400px){
-    header {
-    padding: 5px 20px;
-    }
-}
-
 @media (min-width:640px){
+    header{
+        padding: 5px 20px;
+    }
     header h1 {
         font-size: 2.3em;
     }
