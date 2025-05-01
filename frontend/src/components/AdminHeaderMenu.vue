@@ -15,35 +15,30 @@
             </button>
         </div>
     </header>
-    <div class="content">
-        <div id="lateral-menu" class="menu-close">
-            <nav id="menu-options">
-                <ul>
-                    <li><a href="/admin" :class="{ active: $route.path === '/admin' }"><i class='bx bx-home'></i> Inicio</a></li>
-                    <li><a href="/admin/products" :class="{ active: $route.path === '/admin/products' }"><i class='bx bx-box'></i> Productos</a></li>
-                    <li><a href="/admin/categories" :class="{ active: $route.path === '/admin/categories' }"><i class='bx bx-category'></i> Categorías</a></li>
-                    <li><a href="/admin/orders" :class="{ active: $route.path === '/admin/orders' }"><i class='bx bx-cart'></i> Pedidos</a></li>
-                    <li><a href="/admin/sells" :class="{ active: $route.path === '/admin/sells' }"><i class='bx bx-cart'></i> Ventas</a></li>
-                    <li><a href="/admin/users" :class="{ active: $route.path === '/admin/users' }"><i class='bx bx-user'></i> Clientes</a></li>
-                    <li><a href="/admin/admins" :class="{ active: $route.path === '/admin/admins' }"><i class='bx bx-user'></i> Administradores</a></li>
-                    <li><a href="/admin/supervisors" :class="{ active: $route.path === '/admin/supervisors' }"><i class='bx bx-user'></i> Supervisores</a></li>
-                    <li><a href="" class="logout"><i class='bx bx-log-out'></i>Cerrar sesión</a></li>
-                </ul>
-                <div id="return-store" class="return-store">
-                    <i class='bx bx-store'></i><a href="/">Ver tienda</a>
+    <div id="lateral-menu" class="menu-close">
+        <nav id="menu-options">
+            <ul>
+                <li><a href="/admin" :class="{ active: $route.path === '/admin' }"><i class='bx bx-home'></i> Inicio</a></li>
+                <li><a href="/admin/products" :class="{ active: $route.path === '/admin/products' }"><i class='bx bx-box'></i> Productos</a></li>
+                <li><a href="/admin/categories" :class="{ active: $route.path === '/admin/categories' }"><i class='bx bx-category'></i> Categorías</a></li>
+                <li><a href="/admin/orders" :class="{ active: $route.path === '/admin/orders' }"><i class='bx bx-cart'></i> Pedidos</a></li>
+                <li><a href="/admin/sells" :class="{ active: $route.path === '/admin/sells' }"><i class='bx bx-cart'></i> Ventas</a></li>
+                <li><a href="/admin/users" :class="{ active: $route.path === '/admin/users' }"><i class='bx bx-user'></i> Clientes</a></li>
+                <li><a href="/admin/admins" :class="{ active: $route.path === '/admin/admins' }"><i class='bx bx-user'></i> Administradores</a></li>
+                <li><a href="/admin/supervisors" :class="{ active: $route.path === '/admin/supervisors' }"><i class='bx bx-user'></i> Supervisores</a></li>
+                <li><a href="" class="logout"><i class='bx bx-log-out'></i>Cerrar sesión</a></li>
+            </ul>
+            <div id="return-store" class="return-store">
+                <i class='bx bx-store'></i><a href="/">Ver tienda</a>
+            </div>
+            <div id="user-info" class="user-info">
+                <i class='bx bx-user'></i>
+                <div class="user-data">
+                    <h2>{{ usuario }}</h2>
+                    <p>{{ rol }}</p>
                 </div>
-                <div id="user-info" class="user-info">
-                    <i class='bx bx-user'></i>
-                    <div class="user-data">
-                        <h2>{{ usuario }}</h2>
-                        <p>{{ rol }}</p>
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <main>
-        <router-view />
-        </main>
+            </div>
+        </nav>
     </div>
 </template>
 <script>
@@ -136,20 +131,6 @@ header .menu-button button{
 header .menu-button img{
     width: 30px;
     height: 30px;
-}
-
-.content{
-    display: flex;
-    flex-direction: row;
-}
-
-main{
-    background-image: url('../assets/fondoAdmin.png');
-    /* background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1124&q=100'); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: calc(100vh - 70px);
 }
 
 #lateral-menu{
@@ -364,7 +345,7 @@ main{
     }
 }
 
-@media (max-height: 630px) and (max-width: 768px) {
+@media (max-height: 670px) and (max-width: 768px) {
     #menu-options ul{
         padding-bottom: 200px;
     }
