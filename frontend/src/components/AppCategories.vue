@@ -4,9 +4,7 @@
     <section class="area_categories">
         <h2>Categorías</h2>
         <div class="categories">
-            <AppCategorie />
-            <AppCategorie />
-            <AppCategorie />
+            <AppCategorie :categorias="categorias"/>
         </div>
         <div class="more-categories">
             <p>Más categorías</p>
@@ -21,6 +19,16 @@ export default {
     name: 'AppCategories',
     components: {
         AppCategorie,
+    },
+    data() {
+        return {
+            // Pruebas sin BD (Estos son los mismos valores que debe devolver el JSON del backend)
+            categorias: [
+            { nombre: "Envases", imagen: '/ruta'},
+            { nombre: "Lacteos", imagen: '/ruta'},
+            { nombre: "Decoración", imagen: '/ruta'},
+            ],
+        };
     },
 };
 </script>
@@ -95,12 +103,12 @@ export default {
         flex-direction: row;
     }
     .more-categories {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    margin-top: 25px;
-    gap: 10px;
-}
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        margin-top: 25px;
+        gap: 10px;
+    }
 }
 </style>
