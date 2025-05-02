@@ -1,19 +1,21 @@
 <template>
-    <h2 v-if="categorias == false" style="font-family: open sans, Arial;"><i class='bx bxs-error' style='color:var(--letras); font-size: 1.8em; transform: translateY(8px)'  > </i>No Hay Categorias Disponibles</h2>
-    <div v-for="categoria in categorias" v-bind:key="categoria" class="area_banner_category">
+    <div class="area_banner_category">
         <img class="image-category" src="../assets/banner_categoria2.webp" alt="Banner de Categoría"/>
         <div class="text-category">
-            <h2>{{ categoria.nombre }}</h2>
+            <h2>{{ nombre }}</h2>
         </div>
     </div>
-    <h2></h2>
 </template>
 
 <script>
 export default {
     props: {
-        categorias: {
-            type: Object,
+        nombre: {
+            type: String,
+            required: true,
+        },
+        imagen: {
+            type: String,
             required: true,
         },
     },

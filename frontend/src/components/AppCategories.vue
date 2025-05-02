@@ -3,9 +3,22 @@
 <template>
     <section class="area_categories">
         <h2>Categorías</h2>
-        <div class="categories">
-            <AppCategorie v-if="mode=='three'" :categorias="categorias.slice(0, 3)"/>
-            <AppCategorie v-else :categorias="categorias"/>
+        <h2 v-if="categorias == false" style="font-family: open sans, Arial;"><i class='bx bxs-error' style='color:var(--letras); font-size: 1.8em; transform: translateY(8px)'  > </i>No Hay Categorias Disponibles</h2>
+        <div v-if="mode=='three'" class="categoriesPin">
+            <AppCategorie              
+                v-for="categoria in categorias.slice(0, 3)" 
+                :key="categoria" 
+                :nombre="categoria.nombre"
+                :imagen="categoria.imagen" 
+            />
+        </div>
+        <div v-else class="categoriesAll">
+            <AppCategorie                
+                v-for="categoria in categorias" 
+                :key="categoria" 
+                :nombre="categoria.nombre"
+                :imagen="categoria.imagen" 
+            />
         </div>
         <div v-if="categorias.length > 3 && mode == 'three'" class="more-categories">
             <p>Más categorías</p>
@@ -69,9 +82,18 @@ export default {
     margin: 40px;
 }
 
-.categories {
+.categoriesPin {
     width: 90%;
     height: 800px; 
+    display: flex;
+    flex-direction: column;
+    background-color: var(--fondo);
+    text-align: center;
+    gap: 20px;
+}
+
+.categoriesAll {
+    width: 90%;
     display: flex;
     flex-direction: column;
     background-color: var(--fondo);
@@ -107,13 +129,25 @@ export default {
 }
 
 @media (min-width:768px){
-    .categories {
+    .categoriesPin {
         width: 97%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row;
+    }
+    .categoriesAll {
+        width: 97%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(auto, 1fr);
+        gap: 20px;
     }
     .more-categories {
         display: flex;
