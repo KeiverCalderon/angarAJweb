@@ -59,8 +59,10 @@ export default {
 .text-category {
     position: absolute;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 0 20px;
+    box-sizing: border-box;
     color: var(--texto-inverso);
     font-size: 2.5em;
     font-weight: 350;
