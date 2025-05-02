@@ -22,7 +22,7 @@ export default {
     },
     data() {
         return {
-            // Pruebas sin BD (Estos son los mismos valores que debe devolver el JSON del backend)
+            // Pruebas sin BD (Estos son los mismos valores que debe devolver el JSON del endpoint "obtenerCategoriasDestacadas")
             categorias: [
             { nombre: "Envases", imagen: '/ruta'},
             { nombre: "Lacteos", imagen: '/ruta'},
