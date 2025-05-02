@@ -1,10 +1,12 @@
 <template>
-    <div class="area_banner_category" v-for="categoria in categorias.slice(0, 3)" v-bind:key="categoria">
+    <h2 v-if="categorias == false" style="font-family: open sans, Arial;"><i class='bx bxs-error' style='color:var(--letras); font-size: 1.8em; transform: translateY(8px)'  > </i>No Hay Categorias Disponibles</h2>
+    <div v-for="categoria in categorias.slice(0, 3)" v-bind:key="categoria" class="area_banner_category">
         <img class="image-category" src="../assets/banner_categoria2.webp" alt="Banner de Categoría"/>
         <div class="text-category">
             <h2>{{ categoria.nombre }}</h2>
         </div>
     </div>
+    <h2></h2>
 </template>
 
 <script>
