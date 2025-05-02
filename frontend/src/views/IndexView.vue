@@ -1,7 +1,6 @@
 <template>
     <AppBanner />
-    <AppCategories />
-
+    <AppCategories :mode="'three'"/>
 </template>
 
 <script>

@@ -4,11 +4,16 @@
     <section class="area_categories">
         <h2>Categorías</h2>
         <div class="categories">
-            <AppCategorie :categorias="categorias"/>
+            <AppCategorie v-if="mode=='three'" :categorias="categorias.slice(0, 3)"/>
+            <AppCategorie v-else :categorias="categorias"/>
         </div>
-        <div class="more-categories">
+        <div v-if="categorias.length > 3 && mode == 'three'" class="more-categories">
             <p>Más categorías</p>
-            <a href="/categories" class="">></a>
+            <a href="/categories" class=""><i class='bx bx-chevron-right' style="font-size: 1.8em;"></i></a>
+        </div>
+        <div v-if="mode == 'all'" class="more-categories">
+            <a href="/" class=""><i class='bx bx-chevron-left' style="font-size: 1.8em;"></i></a>
+            <p>Volver al Inicio</p>
         </div>
     </section>
 </template>
@@ -16,17 +21,25 @@
 <script>
 import AppCategorie from './AppCategory.vue';
 export default {
+    props: {
+        mode: {
+            type: String,
+            default: 'all',
+        }
+    },
     name: 'AppCategories',
     components: {
         AppCategorie,
     },
     data() {
         return {
-            // Pruebas sin BD (Estos son los mismos valores que debe devolver el JSON del endpoint "obtenerCategoriasDestacadas")
+            // Pruebas sin BD (Estos son los mismos valores que debe devolver el JSON del endpoint "obtenerCategorias")
             categorias: [
             { nombre: "Envases", imagen: '/ruta'},
             { nombre: "Lacteos", imagen: '/ruta'},
             { nombre: "Decoración", imagen: '/ruta'},
+            { nombre: "Cubiertos", imagen: '/ruta'},
+            { nombre: "Globos", imagen: '/ruta'},
             ],
         };
     },
