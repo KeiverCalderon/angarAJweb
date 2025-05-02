@@ -1,8 +1,10 @@
 <template>
     <div class="area_banner_category">
-        <img class="image-category" src="../assets/banner_categoria2.webp" alt="Banner de Categoría"/>
-        <div class="text-category">
-            <h2>{{ nombre }}</h2>
+        <div class="image-category">
+            <img src="../assets/banner_categoria2.webp" alt="Banner de Categoría"/>
+            <div class="text-category">
+                <h2>{{ nombre }}</h2>
+            </div>
         </div>
     </div>
 </template>
@@ -24,47 +26,57 @@ export default {
 </script>
 
 <style scoped>
-.area_banner_category{
+.area_banner_category {
     width: 100%;
     height: 280px;
     position: relative;
     overflow: hidden;
     text-align: center;
-    display: flex; 
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.image-category{
+.image-category {
     width: 100%;
     max-width: 390px;
     height: 100%;
-    object-fit: cover; 
-    display: block;
+    position: relative; /* Necesario para que .text-category se posicione dentro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius);
+    overflow: hidden; /* Asegura que el contenido no se salga */
+}
+
+.image-category img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: var(--border-radius);
 }
 
-.text-category{
+.text-category {
     position: absolute;
-    bottom: 0px;
-    left: 50%;
-    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: var(--texto-inverso);
     font-size: 2.5em;
     font-weight: 350;
     text-align: center;
     text-shadow: 
         -1px -1px 0px var(--letras),
-        1px -1px 0px  var(--letras), 
-        -1px 1px 0px  var(--letras),  
-        1px 1px 0px  var(--letras); 
+        1px -1px 0px var(--letras), 
+        -1px 1px 0px var(--letras),  
+        1px 1px 0px var(--letras);
+    width: 100%; /* Asegura que ocupe todo el ancho de .image-category */
+    height: 100%; /* Asegura que ocupe toda la altura de .image-category */
+    pointer-events: none; /* Evita que interfiera con eventos del mouse */
 }
 
+
 @media (min-width:768px){
-    .text-category{
-        transform: translateX(0);
-        bottom: 0px;
-        left: 40px; 
-    }
+
 }
 </style>
