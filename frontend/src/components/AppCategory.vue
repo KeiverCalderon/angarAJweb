@@ -64,7 +64,7 @@ export default {
     padding: 0 20px;
     box-sizing: border-box;
     color: var(--texto-inverso);
-    font-size: 2.5em;
+    font-size: 2.3em;
     font-weight: 350;
     text-align: center;
     text-shadow: 
