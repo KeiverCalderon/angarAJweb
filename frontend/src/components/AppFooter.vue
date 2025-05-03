@@ -5,7 +5,6 @@
             <p>Algún problema? <a href="">contacta al soporte</a></p>
         </div>
         <div class="social-media">
-            <a href="https://www.facebook.com/DistribucionesAngarAJ" target="_blank" rel="noopener noreferrer"><i class='bx bxl-facebook'></i></a>
             <a href="https://www.instagram.com/distribucionesangaraj/" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram'></i></a>
         </div>
     </footer>
@@ -27,7 +26,7 @@ export default {
 </script>
 <style scoped>
 footer {
-    background-color: #2d3748; /* Gray-800 */
+    background-color: var(--footer-bg); 
     color: #fff;
     padding: 1rem 0;
 }
@@ -41,10 +40,10 @@ footer {
 }
 p {
     margin: 0;
-    font-size: 0.875rem; /* Text-sm */
+    font-size: 0.875rem; 
 }
 a {
-    color: #63b3ed; /* Blue-400 */
+    color: var(--footer-link); 
     text-decoration: none;
     transition: color 0.3s ease;
 }
