@@ -1,5 +1,15 @@
 <template>
-    <article class="product-card">
+    <article v-if="mode == 'normal'" class="product-card">
+        <div class="product-image">
+            <img src="../assets/banner_categoria.webp" alt="Product Image" />
+        </div>
+        <div class="product-info">
+            <h3>{{ nombre }}</h3>
+            <p class="price">${{ precio }}</p>
+            <button>Añadir al Carrito</button>
+        </div>
+    </article>
+    <article v-else class="product-card-fixed">
         <div class="product-image">
             <img src="../assets/banner_categoria.webp" alt="Product Image" />
         </div>
@@ -13,6 +23,10 @@
 <script>
 export default {
     props: {
+        mode: {
+            type: String,
+            default: 'normal',
+        },
         nombre: {
             type: String,
             required: true,
@@ -30,10 +44,11 @@ export default {
 };
 </script>
 <style scoped>
-.product-card {
+/* La carta que se muestra en el slide */
+.product-card-fixed { 
     width: 100%;
     height: 300px;
-    margin: 10px;
+    margin: 20px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -44,13 +59,13 @@ export default {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color:var(--tarjeta);
 }
-.product-card:hover {
+.product-card-fixed:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 .product-image {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     overflow: hidden;
     border-radius: 10px 10px 0 0;
 }
@@ -59,9 +74,6 @@ export default {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
-}
-.product-image:hover img {
-    transform: scale(1.05);
 }
 .product-info {
     padding: 20px;
