@@ -1,12 +1,12 @@
 <template>
-    <div class="area_banner_category">
+    <router-link :to="{ name: 'Categoria', params: { category: nombre } }" class="area_banner_category">
         <div class="image-category">
             <img src="../assets/banner_categoria2.webp" alt="Banner de Categoría"/>
             <div class="text-category">
                 <h2>{{ nombre }}</h2>
             </div>
         </div>
-    </div>
+    </router-link>
 </template>
 
 <script>

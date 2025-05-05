@@ -6,6 +6,7 @@ import AdminPanel from '../layouts/AdminPanel.vue';
 import ClientPanel from '../layouts/ClientPanel.vue';
 import Dashboard from '../views/DashboardView.vue';
 import CategoriesView from '../views/CategoriesView.vue';
+import ProductosView from '../views/ProductosView.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -23,6 +24,11 @@ const router = createRouter({
         {
           path: 'categories',
           component: CategoriesView,
+        },
+        {
+          path: '/:category',
+          name: 'Categoria',
+          component: ProductosView,
         },
       ]
     },
