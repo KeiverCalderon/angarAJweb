@@ -1,15 +1,17 @@
 <template>
     <div class="products-view">
         <h2>{{ categoria }}</h2>
+        <input type="text" placeholder="Buscar Productos"  v-model="busqueda" class="search-input" />
         <section class="products-grid">
             <AppProduct
-                v-for="(producto, index) in productos" :key="index"
+                v-for="(producto, index) in productosFiltrados" :key="index"
                 :mode="'normal'"
                 :nombre="producto.nombre"
                 :precio="producto.precio"
                 :imagen="producto.imagen"
             />
         </section>
+        <h3 v-if="productosFiltrados.length < 1" class="noResults">No Hay Productos Que Coincidan en la categoría {{ categoria }}</h3>
     </div>
 </template>
 
@@ -23,12 +25,20 @@ export default {
         categoria() {
             return this.$route.params.category;
         },
+        // Filtrar productos por nombre
+        productosFiltrados() {
+            return this.productos.filter(producto => {
+                return producto.nombre.toLowerCase().includes(this.busqueda.toLowerCase());
+            });
+        },
     },
     components: {
         AppProduct,
     },
     data() {
         return {
+            busqueda : "",
+            resultados: [],
             // Pruebas sin BD (Estos son los mismos valores que debe devolver el JSON del endpoint "obtenerProductosPorCategoria(categoria)")
             productos: [
             { id:1, nombre: "Leche Latti", precio: 500, descripción: 'Leche Latti 1 litro', imagen: '/ruta'},
@@ -49,6 +59,7 @@ export default {
     align-items: center;
     width: 100%;
     background-color: var(--fondo);
+    min-height: calc(100vh - 80px);
 }
 
 h2{
@@ -57,6 +68,25 @@ h2{
     margin-top: 20px;
     margin-bottom: 20px;
     color: var(--letras);
+}
+
+.search-input{
+    width: 90%;
+    max-width: 500px;
+    height: 40px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--letras);
+    background-color: white;
+    color: var(--texto);
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.noResults{
+    font-size: 1.5em;
+    color: var(--letras);
+    margin-top: 20px;
 }
 
 .products-grid {
