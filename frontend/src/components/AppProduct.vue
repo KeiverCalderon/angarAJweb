@@ -91,17 +91,19 @@ export default {
     transition: transform 0.3s ease;
 }
 .product-info {
-    padding: 20px;
+    padding: 15px;
     border-radius: 0 0 10px 10px;
 }
 .product-info h3 {
     font-size: 1.5em;
-    margin-bottom: 10px;
+    margin: 0;
+    margin-bottom: 5px;
     color: var(--letras);
 }
 .product-info .price {
     font-size: 1.2em;
     color: var(--letras);
+    margin: 0;
     margin-bottom: 10px;
 }
 
