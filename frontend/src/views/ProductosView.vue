@@ -53,7 +53,7 @@ export default {
 .products-view{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
     background-color: var(--fondo);
@@ -85,6 +85,7 @@ h2{
     font-size: 1.5em;
     color: var(--letras);
     margin-top: 20px;
+    max-width: 90%;
 }
 
 .products-grid {

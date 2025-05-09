@@ -21,5 +21,6 @@ body{
   font-family: "Cal Sans", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color:transparent;
 }
 </style>
