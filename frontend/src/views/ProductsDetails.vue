@@ -3,11 +3,15 @@
         <article class="preview_producto">
             <div class="imagen-descripcion">
                 <div id="imagen_box">
-                    <img src="../assets/banner_categoria.webp" class="imagen_preview"  alt="{{ producto.modelo }}">
+                    <img src="../assets/banner_categoria2.webp" class="imagen_preview"  alt="{{ producto.modelo }}">
                 </div>
                 <div class="detalles_preview">
-                    <p class="marca_preview">{{ producto.marca }}</p>
-                    <p class="modelo_preview">{{ producto.modelo }}</p>
+                    <p class="nombre">{{ producto.nombre }}</p>
+                    <div id="descripcion_article">
+                        <div id="descripcion_completa">
+                            <p>{{ producto.descripcion }}</p>
+                        </div>
+                    </div>
                     <p class="precio_preview"> <span>USD$</span> {{ producto.precio }} </p>
                     <p class="stock_preview">Quedan {{ producto.stock }} unidades en stock</p>
                     <p class="cantidad_preview">Cantidad</p>
@@ -25,12 +29,6 @@
                     </form>
                 </div>
             </div>
-        </article>
-        <article id="descripcion_article">
-            <h2>Descripción del Producto</h2>
-            <section id="descripcion_completa">
-                <p>{{ producto.descripcion }}</p>
-            </section>
         </article>
         <div id="btn_regresar">
             <a href="/">Regresar a la tienda</a>
@@ -52,19 +50,22 @@ export default {
         return {
             // Pruebas sin BD (Estos son los mismos valores que debe devolver el JSON del endpoint "obtenerProductoPorID(id)")
             producto: 
-            { id:23, nombre: "Leche Latti", precio: 500, descripción: 'Leche Latti 1 litro', imagen: 'banner_categoria2.webp', stock: 23},
+            { id:23, nombre: "Leche Latti", precio: 500, descripcion: 'Leche Latti 1 litro, ideal para hacer tortas!', imagen: 'banner_categoria2.webp', stock: 23},
         };
     },
 };
 </script>
 <style scoped>
+*{
+    margin: 0;
+}
 #productDetailsView{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 40px;
-    margin-top: 20px;
+    background-color:var(--fondo);
 }
 
 .preview_producto{
@@ -77,6 +78,7 @@ export default {
     box-sizing: border-box;
     padding: 20px;
     gap: 10px;
+    margin-top: 20px;
     background-color: var(--tarjeta);
     border-radius: var(--border-radius-box);
     box-shadow: 2px 2px 5px black;
@@ -110,6 +112,7 @@ export default {
     aspect-ratio: 1/1;
     align-items: left;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .detalles_preview{
@@ -121,15 +124,9 @@ export default {
     gap: 13px;
 }
 
-.detalles_preview .marca_preview{
+.detalles_preview .nombre{
     font-weight: 800;
     font-size: 2rem;
-}
-
-.detalles_preview .modelo_preview{
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin: 5px 0;
 }
 
 .detalles_preview .precio_preview{
@@ -171,6 +168,7 @@ export default {
     font-size: 1.2rem;
     justify-content: center;
     align-items: center;
+    font-family: "Cal Sans", sans-serif;
 }
 
 .add_cart_button_preview:hover{
@@ -182,13 +180,20 @@ export default {
 
 #descripcion_article{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
     width: 90%;
     max-width: 950px;
     gap: 10px;
     margin-bottom: 20px;
+    background-color: var(--categorias);
+    color: var(--letras);
+    border-radius: 20px;
+    padding: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #descripcion_article h2{
@@ -229,6 +234,23 @@ export default {
     background-color: #ddd;
 }
 
+#btn_regresar{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+#btn_regresar a{
+    background-color: var(--boton);
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 10px;
+    color: var(--texto-inverso);
+}
+
 
 /* Adaptacion a pantallas mas grandes */
 
@@ -245,6 +267,7 @@ export default {
 
     #descripcion_article{
         animation: fadeInUp 2s ease forwards;
+        margin-left: -20px;
     }
 
     @keyframes fadeInUp {
