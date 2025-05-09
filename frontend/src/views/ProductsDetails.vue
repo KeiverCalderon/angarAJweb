@@ -81,7 +81,7 @@ export default {
     margin-top: 20px;
     background-color: var(--tarjeta);
     border-radius: var(--border-radius-box);
-    box-shadow: 2px 2px 5px black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.7s ease-in-out;
 }
 
@@ -173,7 +173,7 @@ export default {
 
 .add_cart_button_preview:hover{
     cursor: pointer;
-    box-shadow: 2px 2px 5px black;
+    background-color: var(--boton-hover);
 }
 
 /* Descripcion completa */
@@ -249,6 +249,11 @@ export default {
     text-decoration: none;
     border-radius: 10px;
     color: var(--texto-inverso);
+}
+
+#btn_regresar a:hover{
+    background-color: var(--boton-hover);
+
 }
 
 
