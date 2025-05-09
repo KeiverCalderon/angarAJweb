@@ -49,6 +49,10 @@ const router = createRouter({
       ]
     },
   ],
+      scrollBehavior() {
+        // Siempre desplázate al inicio de la página
+        return { top: 0 };
+    },
 });
 
 export default router;

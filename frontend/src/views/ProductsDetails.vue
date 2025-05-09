@@ -31,7 +31,7 @@
             </div>
         </article>
         <div id="btn_regresar">
-            <a href="/">Regresar a la tienda</a>
+            <a @click="goBack()">Regresar a la tienda</a>
         </div>
     </section>
 </template>
@@ -52,6 +52,11 @@ export default {
             producto: 
             { id:23, nombre: "Leche Latti", precio: 500, descripcion: 'Leche Latti 1 litro, ideal para hacer tortas!', imagen: 'banner_categoria2.webp', stock: 23},
         };
+    },
+    methods: {
+        goBack() {
+        this.$router.back(); // Navega a la ruta anterior
+        },
     },
 };
 </script>
