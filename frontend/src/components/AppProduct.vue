@@ -1,46 +1,39 @@
 <template>
-    <article v-if="mode == 'normal'" class="product-card">
+    <router-link v-if="mode == 'normal'" :to="{ name: 'Producto', params: { product: producto.id } }" class="product-card">
         <div class="product-image">
             <img src="../assets/banner_categoria.webp" alt="Product Image" />
         </div>
         <div class="product-info">
-            <h3>{{ nombre }}</h3>
-            <p class="price">${{ precio }}</p>
+            <h3>{{ producto.nombre }}</h3>
+            <p class="price">${{ producto.precio }}</p>
             <button>Añadir al Carrito</button>
         </div>
-    </article>
-    <article v-else class="product-card-fixed">
+    </router-link>
+    <router-link v-else :to="{ name: 'Producto', params: { product: producto.id } }" class="product-card-fixed">
         <div class="product-image">
             <img src="../assets/banner_categoria.webp" alt="Product Image" />
         </div>
         <div class="product-info">
-            <h3>{{ nombre }}</h3>
-            <p class="price">${{ precio }}</p>
+            <h3>{{ producto.nombre }}</h3>
+            <p class="price">${{ producto.precio }}</p>
             <button>Añadir al Carrito</button>
         </div>
-    </article>
+    </router-link>
+    
 </template>
 <script>
 export default {
+    name: 'AppProduct',
     props: {
         mode: {
             type: String,
             default: 'normal',
         },
-        nombre: {
-            type: String,
-            required: true,
-        },
-        precio: {
-            type: String,
-            required: true,
-        },
-        imagen: {
-            type: Number,
+        producto: {
+            type: Object,
             required: true,
         },
     },
-    name: 'AppCategory',
 };
 </script>
 <style scoped>
@@ -58,6 +51,7 @@ export default {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color:var(--tarjeta);
+    text-decoration: none;
 }
 .product-card-fixed:hover {
     transform: translateY(-5px);
@@ -76,6 +70,7 @@ export default {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color:var(--tarjeta);
+    text-decoration: none;
 }
 
 .product-image {

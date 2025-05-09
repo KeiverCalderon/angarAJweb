@@ -7,6 +7,7 @@ import ClientPanel from '../layouts/ClientPanel.vue';
 import Dashboard from '../views/DashboardView.vue';
 import CategoriesView from '../views/CategoriesView.vue';
 import ProductosView from '../views/ProductosView.vue';
+import ProductsDetails from '../views/ProductsDetails.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -29,6 +30,11 @@ const router = createRouter({
           path: '/:category',
           name: 'Categoria',
           component: ProductosView,
+        },
+        {
+          path: '/product/:product',
+          name: 'Producto',
+          component: ProductsDetails,
         },
       ]
     },

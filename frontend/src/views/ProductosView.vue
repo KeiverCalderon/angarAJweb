@@ -1,14 +1,12 @@
 <template>
     <div class="products-view">
         <h2>{{ categoria }}</h2>
-        <input type="text" placeholder="Buscar Productos"  v-model="busqueda" class="search-input" />
+        <input type="text" placeholder="Buscar Productos" v-model="busqueda" class="search-input" />
         <section class="products-grid">
             <AppProduct
                 v-for="(producto, index) in productosFiltrados" :key="index"
                 :mode="'normal'"
-                :nombre="producto.nombre"
-                :precio="producto.precio"
-                :imagen="producto.imagen"
+                :producto="producto"
             />
         </section>
         <h3 v-if="productosFiltrados.length < 1" class="noResults">No Hay Productos Que Coincidan en la categoría {{ categoria }}</h3>
@@ -44,7 +42,7 @@ export default {
             { id:1, nombre: "Leche Latti", precio: 500, descripción: 'Leche Latti 1 litro', imagen: '/ruta'},
             { id:2, nombre: "Galleta Maria", precio: 200, descripción: 'Leche Latti 1 litro', imagen: '/ruta'},
             { id:3, nombre: "Jamón Plumrouse", precio: 1000, descripción: 'Leche Latti 1 litro', imagen: '/ruta'},
-            { id:3, nombre: "Jamón Plumrouse", precio: 1000, descripción: 'Leche Latti 1 litro', imagen: '/ruta'},
+            { id:4, nombre: "Jamón Plumrouse", precio: 1000, descripción: 'Leche Latti 1 litro', imagen: '/ruta'},
             ],
         };
     },

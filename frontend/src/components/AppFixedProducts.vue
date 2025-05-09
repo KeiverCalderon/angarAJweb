@@ -29,9 +29,7 @@
                 <SplideSlide v-for="(producto, index) in productos" :key="index">
                     <AppProduct
                         :mode="'slider'"
-                        :nombre="producto.nombre"
-                        :precio="producto.precio"
-                        :imagen="producto.imagen"
+                        :producto="producto"
                     />
                 </SplideSlide>
             </Splide>
@@ -55,12 +53,10 @@ export default {
         return {
             // Pruebas sin BD (Estos son los mismos valores que debe devolver el JSON del endpoint "obtenerProductosDestacados")
             productos: [
-            { nombre: "Levadura Instantánea", precio: 560, imagen: '/ruta'},
-            { nombre: "Leche Líquida", precio: 50, imagen: '/ruta'},
-            { nombre: "Chocolate en Barra", precio: 60, imagen: '/ruta'},
-            { nombre: "Levadura Instantánea", precio: 560, imagen: '/ruta'},
-            { nombre: "Levadura Instantánea", precio: 560, imagen: '/ruta'},
-            { nombre: "Levadura Instantánea", precio: 560, imagen: '/ruta'},
+            { id:1, nombre: "Leche Latti", precio: 500, descripción: 'Leche Latti 1 litro', imagen: '/ruta'},
+            { id:2, nombre: "Galleta Maria", precio: 200, descripción: 'Leche Latti 1 litro', imagen: '/ruta'},
+            { id:3, nombre: "Jamón Plumrouse", precio: 1000, descripción: 'Leche Latti 1 litro', imagen: '/ruta'},
+            { id:4, nombre: "Jamón Plumrouse", precio: 1000, descripción: 'Leche Latti 1 litro', imagen: '/ruta'},
             ],
         };
     },
