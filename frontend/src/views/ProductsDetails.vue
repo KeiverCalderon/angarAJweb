@@ -289,7 +289,7 @@ export default {
 
 #btn_regresar a:hover{
     background-color: var(--boton-hover);
-
+    cursor: pointer;
 }
 
 
