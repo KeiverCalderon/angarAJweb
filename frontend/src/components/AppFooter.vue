@@ -2,7 +2,12 @@
     <footer class="bg-gray-800 text-white py-4">
         <div class="container mx-auto text-center">
             <p>&copy; {{ year }} Distribuciones Angar AJ. Todos los Derechos Reservados.</p>
+            <br>
             <p>Algún problema? <a href="">contacta al soporte</a></p>
+            <br>
+            <a href="/login">Iniciar Sesión</a>
+            <a href="/categories">Categorías</a>
+            <a href="https://wa.me/58">Nuestro WhatsApp</a>
         </div>
         <div class="social-media">
             <a href="https://www.instagram.com/distribucionesangaraj/" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram'></i></a>
@@ -41,11 +46,13 @@ footer {
 p {
     margin: 0;
     font-size: 0.875rem; 
+    text-align: center;
 }
 a {
     color: var(--footer-link); 
     text-decoration: none;
     transition: color 0.3s ease;
+    margin-bottom: 10px;
 }
 
 .social-media{
