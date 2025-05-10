@@ -71,6 +71,7 @@ export default {
     justify-content: center;
     gap: 40px;
     background-color:var(--fondo);
+    min-height: calc(100vh - 80px);
 }
 
 .preview_producto{
