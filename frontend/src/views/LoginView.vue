@@ -1,7 +1,7 @@
 <template>
     <div class="login-div">
         <div class="logo-div">
-            <img src="../assets/logo.jpg" alt="logo de decolorvers">
+            <img src="../assets/logo.jpg" alt="logo de decolorvers" @click="goHome()">
             <p>¡Nuestras ofertas esperan por tí!</p>
             <a href="/" class="return-index">Volver a la tienda</a>
         </div>
@@ -22,6 +22,16 @@
         </form>
     </div>
 </template>
+<script>
+    export default {
+        name: 'LoginView',
+        methods: {
+            goHome() {
+            this.$router.push('/'); // Navega a la ruta de inicio
+            },
+        }
+    }
+</script>
 
 <style scoped>
 /* Importes */

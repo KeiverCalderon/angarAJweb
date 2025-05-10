@@ -1,7 +1,7 @@
 <template>
     <div class="login-div">
         <div class="logo-div">
-            <img src="../assets/logo.jpg" alt="logo de decolorvers">
+            <img src="../assets/logo.jpg" alt="logo de decolorvers" @click="goHome()">
             <p>¡Bienvenido a la tienda!</p>
             <p>¡Regístrate y disfruta de nuestras ofertas!</p>
             <a href="/" class="return-index">Volver a la tienda</a>
@@ -31,6 +31,16 @@
         </form>
     </div>
 </template>
+<script>
+    export default {
+        name: 'RegisterView',
+        methods: {
+            goHome() {
+            this.$router.push('/'); // Navega a la ruta de inicio
+            },
+        }
+    }
+</script>
 
 <style scoped>
 /* Importes */
