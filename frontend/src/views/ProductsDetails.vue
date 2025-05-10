@@ -15,18 +15,14 @@
                     <p class="precio_preview"> <span>USD$</span> {{ producto.precio }} </p>
                     <p class="stock_preview">Quedan {{ producto.stock }} unidades en stock</p>
                     <p class="cantidad_preview">Cantidad</p>
-                    <form action="" method="POST">
-                        <div class="cantidad-selector">
-                            <button type="button" id="decremento">-</button>
-                            <input type="number" id="cantidad" name="cantidad" value="1" min="1" max="{{ producto.stock }}" readonly>
-                            <button type="button" id="incremento">+</button>
-                        </div>
-                        <div class="acciones_producto_preview">
-                            <!-- <input type="hidden" name="producto_id" value="{{ producto.id }}">
-                            <input type="hidden" name="next" value="{{ request.path }}"> -->
-                            <button class="add_cart_button_preview" type="submit">Agregar Al Carrito</button>
-                        </div>
-                    </form>
+                    <div class="cantidad-selector">
+                        <button type="button" id="decremento" @click="decrementar()">-</button>
+                        <input type="number" id="cantidad" name="cantidad" v-model="cantidad" :min="1" :max="producto.stock" readonly>
+                        <button type="button" id="incremento" @click="incrementar()">+</button>
+                    </div>
+                    <div class="acciones_producto_preview">
+                        <button class="add_cart_button_preview" type="submit" @click="agregarAlCarrito()">Agregar Al Carrito</button>
+                    </div>
                 </div>
             </div>
         </article>
@@ -51,11 +47,45 @@ export default {
             // Pruebas sin BD (Estos son los mismos valores que debe devolver el JSON del endpoint "obtenerProductoPorID(id)")
             producto: 
             { id:23, nombre: "Leche Latti", precio: 500, descripcion: 'Leche Latti 1 litro, ideal para hacer tortas!', imagen: 'banner_categoria2.webp', stock: 23},
+            cantidad: 1,
         };
     },
     methods: {
         goBack() {
         this.$router.back(); // Navega a la ruta anterior
+        },
+        incrementar() {
+            if (this.cantidad < this.producto.stock) {
+                this.cantidad++;
+            }
+        },
+        decrementar() {
+            if (this.cantidad > 1) {
+                this.cantidad--;
+            }
+        },
+        agregarAlCarrito() {
+            // logica para agregar producto con cantidad al local storage
+            const productoConCantidad = {
+                id: this.producto.id,
+                nombre: this.producto.nombre,
+                precio: this.producto.precio,
+                cantidad: this.cantidad,
+            };
+            // Obtener el carrito del local storage
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            // Verificar si el producto ya está en el carrito
+            const productoExistente = carrito.find(item => item.id === productoConCantidad.id);
+            if (productoExistente) {
+                // Si el producto ya está en el carrito, actualizar la cantidad
+                productoExistente.cantidad += this.cantidad;
+            } else {
+                // Si no está, agregarlo al carrito
+                carrito.push(productoConCantidad);
+            }
+            // Guardar el carrito actualizado en el local storage
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            console.log('Producto agregado al carrito:', productoConCantidad);
         },
     },
 };
@@ -160,7 +190,7 @@ export default {
 .acciones_producto_preview{
     width: 100%;
     display: flex;
-    justify-content:center;
+    justify-content:flex-start;
     align-items: center;
 }
 
