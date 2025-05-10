@@ -125,7 +125,7 @@ export default {
     width: 90%;
     max-width: 1000px;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 10px;
     gap: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -141,7 +141,6 @@ export default {
     flex-direction: column;
     width: 100%;
     max-width: 900px;
-    padding: 20px;
     box-sizing: border-box;
 }
 
@@ -406,6 +405,7 @@ input[type="number"]::-webkit-outer-spin-button {
 @media (min-width:750px){
     .carrito{
         flex-direction: row;
+        padding: 20px;
     }
 
     .carrito_vacio{
