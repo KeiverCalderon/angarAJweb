@@ -16,4 +16,6 @@
   /* Medidas */
     --border-radius-box:20px;
     --border-radius: 50px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+;
   }

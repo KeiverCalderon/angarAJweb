@@ -8,6 +8,7 @@ import Dashboard from '../views/DashboardView.vue';
 import CategoriesView from '../views/CategoriesView.vue';
 import ProductosView from '../views/ProductosView.vue';
 import ProductsDetails from '../views/ProductsDetails.vue';
+import CarritoView from '../views/CarritoView.vue'; 
 
 const router = createRouter({
   history: createWebHistory(),
@@ -25,6 +26,10 @@ const router = createRouter({
         {
           path: 'categories',
           component: CategoriesView,
+        },
+        {
+          path: 'cart',
+          component: CarritoView,
         },
         {
           path: '/:category',
