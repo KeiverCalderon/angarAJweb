@@ -1,9 +1,9 @@
 <template>
     <section class="area-carrito">
         <article class="contenido-carrito">
+            <h2 class="titulo">Carrito de Compras</h2>
             <div v-if="elementos.length > 0" class="carrito">
                 <div class="compra">
-                    <h2>Carrito de Compras</h2>
                     <div v-for="(elemento, index) in elementos" :key='index' class="producto">
                         <div id="elemento_del_carrito">
                             <div class="producto-detalles"><br><br>
@@ -12,8 +12,8 @@
                             <div class="cantidad-selector-carrito">
                                 <form action="" method="POST" class="form-cantidad">
                                     <label for="cantidad">Cantidad:</label>
-                                    <input type="number" name="cantidad" value="{{ elemento.cantidad }}" min="1" max="{{ elemento.stock }}">
-                                    <button type="submit" class="btn-actualizar">Actualizar🔄</button>
+                                    <input type="number" name="cantidad" v-model="elemento.cantidad" :min="1" :max="elemento.stock">
+                                    <button type="submit" class="btn-actualizar">Actualizar <i class='bx bx-sync'></i></button>
                                 </form>
                                 <div class="producto-cantidad-disponible">
                                     <span>Disponibles:</span> {{elemento.stock}}
@@ -108,6 +108,13 @@ export default {
 };
 </script>
 <style scoped>
+
+.titulo{
+    color: var(--letras);
+    font-size: 2.5em;
+    margin-bottom: 0px;
+}
+
 .area-carrito{
     display: flex;
     flex-direction: column;
@@ -124,7 +131,7 @@ export default {
     align-items: center;
     flex-direction: column;
     width: 90%;
-    max-width: 1150px;
+    max-width: 1000px;
     box-sizing: border-box;
     padding: 20px;
     gap: 10px;
@@ -141,7 +148,7 @@ export default {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    max-width: 1100px;
+    max-width: 900px;
     padding: 20px;
     box-sizing: border-box;
 }
@@ -160,13 +167,18 @@ export default {
 
 h2{
     margin-top: 0;
+    margin-bottom: 0;
 }
 
 .producto{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: solid 1px #dddddd;
+    border-radius: var(--border-radius-box);
+    border: solid 1px #A3A3A3;
+    padding: 20px;
+    box-sizing: border-box;
+    color: var(--letras);
 }
 
 #elemento_del_carrito{
@@ -179,7 +191,7 @@ h2{
     justify-content: center;
     width: 40px;
     aspect-ratio: 1/1;
-    background-color: rgb(192, 33, 33);
+    background-color: var(--boton);
     border-radius: 10px;
 }
 
@@ -197,7 +209,10 @@ h2{
 }
 
 .producto-detalles{
-    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
 }
 
 .producto-precio{
@@ -253,6 +268,13 @@ h2{
     text-align: center;
 }
 
+.form-cantidad{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
 .cantidad-selector-carrito{
     display: flex;
     justify-content: center;
@@ -281,12 +303,19 @@ input[type="number"]::-webkit-outer-spin-button {
     }
 
 .btn-actualizar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 5px;
     background-color: var(--boton);
     box-shadow: var(--box-shadow);
     color: var(--texto-inverso);
     padding: 4px;
     border: none;
+}
+
+.btn-actualizar i{
+    font-size: 20px;
 }
 
 .btn-actualizar:hover{
@@ -328,9 +357,22 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 10px;
 }
 
+#btn_regresar a{
+    background-color: var(--boton);
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 10px;
+    color: var(--texto-inverso);
+}
+
+#btn_regresar a:hover{
+    background-color: var(--boton-hover);
+    cursor: pointer;
+}
+
 /* Responsive Carrito */
 
-@media (min-width:700px){
+@media (min-width:750px){
     .carrito{
         flex-direction: row;
     }
@@ -348,22 +390,13 @@ input[type="number"]::-webkit-outer-spin-button {
     }
 
     .contenido-carrito{
-        padding: 70px;
+        padding: 20px 20px;
     }
 
     .compra{
         width: 60%;
         padding-right: 20px;
         border-bottom: none;
-        border-right: 1px solid #dddddd;
-    }
-
-    .producto{
-        border-right: none;
-    }
-
-    .error_carrito{
-        border-right: none;
     }
     
     .info{
@@ -378,6 +411,22 @@ input[type="number"]::-webkit-outer-spin-button {
         text-align: center;
         /* Deshabilitar escritura en el input */
         pointer-events: none;
+    }
+}
+
+@media (min-width: 900px) {
+    .contenido-carrito{
+        padding: 20px 40px;
+    }
+    .compra{
+        width: 70%;
+        padding-right: 20px;
+        border-bottom: none;
+    }
+    
+    .info{
+        width: 30%;
+        padding-left: 20px;
     }
 }
 </style>
