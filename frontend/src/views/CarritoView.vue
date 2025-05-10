@@ -30,22 +30,14 @@
                     </div>
                 </div>
                 <div class="info">
-                    <h2>Información de la compra</h2><br>
+                    <h2 class="info_title"><i class='bx bx-info-circle' ></i> Detalles</h2><br>
                     <div class="subtotal">
                         Subtotal: {{ total }} <span>USD$</span>
                     </div>
                     <div class="total">
                         Total: {{ total }} <span>USD$</span>
                     </div>
-                    <form id="form-pago" action="" method="POST">
-                        <label for="metodo_pago">Método de Pago:</label>
-                        <select name="metodo_pago" id="metodo_pago" required>
-                            <option value="" disabled selected>Sin seleccionar</option>
-                            <option value="paypal">PayPal</option>
-                            <option value="tarjeta de crédito">Tarjeta de Crédito</option>
-                        </select>
-                        <button type="button" id="btn-pagar" class="checkout-button">COMPRAR</button>
-                    </form>
+                    <button class="comprar_btn">Comprar Ahora<i class='bx bxl-whatsapp'></i></button>
                 </div>
             </div>
             <div v-else class="carrito">
@@ -165,6 +157,15 @@ export default {
     padding: 20px 2px;
 }
 
+.info_title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--letras);
+    font-size: 2em;
+    margin-bottom: 0px;
+}
+
 h2{
     margin-top: 0;
     margin-bottom: 0;
@@ -224,9 +225,16 @@ h2{
     margin-bottom: 5px;
 }
 
+.subtotal {
+    font-size: 1.4em;
+    margin-bottom: 5px;
+}
+
 .total {
     font-weight: bold;
-    margin-top: 20px;
+    font-size: 2em;
+    color: var(--letras);
+    margin-bottom: 20px;
 }
 
 .checkout-button {
@@ -355,6 +363,29 @@ input[type="number"]::-webkit-outer-spin-button {
 .contenido-ventana button{
     padding: 10px 20px;
     margin: 10px;
+}
+
+.comprar_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--boton);
+    color: var(--texto-inverso);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.comprar_btn i{
+    font-size: 30px;
+}
+
+.comprar_btn:hover{
+    background-color: var(--boton-hover);
+    cursor: pointer;
 }
 
 #btn_regresar a{
