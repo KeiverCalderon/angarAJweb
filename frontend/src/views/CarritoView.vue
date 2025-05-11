@@ -1,31 +1,33 @@
 <template>
     <section class="area-carrito">
         <article class="contenido-carrito">
-            <h2 class="titulo">Carrito de Compras</h2>
             <div v-if="elementos.length > 0" class="carrito">
                 <div class="compra">
+                    <h2 class="titulo">Carrito de Compras</h2>
                     <div v-for="(elemento, index) in elementos" :key='index' class="producto">
+                        <div class="img_elemento">
+                            <img src="../assets/banner_categoria.webp">
+                        </div>
                         <div id="elemento_del_carrito">
                             <div class="producto-detalles"><br><br>
                                 <h2>{{ elemento.nombre }}</h2><br>
                             </div>
                             <div class="cantidad-selector-carrito">
-                                <form action="" method="POST" class="form-cantidad">
-                                    <label for="cantidad">Cantidad:</label>
-                                    <input type="number" name="cantidad" v-model="elemento.cantidad" :min="1" :max="elemento.stock">
-                                    <button type="submit" class="btn-actualizar">Actualizar <i class='bx bx-sync'></i></button>
-                                </form>
+                                <div class="cantidad-selector">
+                                    <button type="button" id="decremento" @click="decrementar()">-</button>
+                                    <input type="number" id="cantidad" name="cantidad" v-model="cantidad" :min="1" :max="elemento.stock" readonly>
+                                    <button type="button" id="incremento" @click="incrementar()">+</button>
+                                </div>
                                 <div class="producto-cantidad-disponible">
                                     <span>Disponibles:</span> {{elemento.stock}}
                                 </div>
-                                <br>
                             </div>
                             <div class="producto-precio"><br>
                                 <span>USD$</span> {{elemento.precio}} c/u
                             </div>
                         </div>
                         <div id="btn_borrar_del_carrito">
-                            <a href="" class="btn_borrar_icon"><i class='bx bx-trash'></i></a>
+                            <a href="" class="btn_borrar_icon"><img src="../assets/close-svgrepo-com.svg"></a>
                         </div>
                     </div>
                 </div>
@@ -90,6 +92,7 @@ export default {
             { id:23, nombre: "Leche Latti", precio: 500, descripcion: 'Leche Latti 1 litro, ideal para hacer tortas!', imagen: 'banner_categoria2.webp', stock: 23, cantidad: 2},
             ],
             total: 1000,
+            cantidad:1,
         };
     },
     methods: {
@@ -104,7 +107,8 @@ export default {
 .titulo{
     color: var(--letras);
     font-size: 2.5em;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
+
 }
 
 .area-carrito{
@@ -137,7 +141,7 @@ export default {
 .carrito{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     width: 100%;
     max-width: 900px;
@@ -147,7 +151,7 @@ export default {
 .compra{
     width: 100%;
     box-sizing: border-box;
-    padding: 20px 2px;
+    padding: 2px 2px;
 }
 
 .info{
@@ -174,11 +178,29 @@ h2{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: var(--border-radius-box);
-    border: solid 1px #A3A3A3;
-    padding: 20px;
+    border-bottom: solid 1px #A3A3A3;
+    padding: 0 20px;
     box-sizing: border-box;
-    color: var(--letras);
+    color: var(--texto);
+    gap: 10px;
+}
+
+.producto:nth-child(2){
+    border-top: solid 1px #A3A3A3;
+}
+
+.img_elemento{
+    height: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img_elemento img{
+    width: 75px;
+    height: 75px;
+    border-radius: 5px;
 }
 
 #elemento_del_carrito{
@@ -189,9 +211,8 @@ h2{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
+    width: 50px;
     aspect-ratio: 1/1;
-    background-color: var(--boton);
     border-radius: 10px;
 }
 
@@ -203,9 +224,9 @@ h2{
     text-decoration: none;
 }
 
-.btn_borrar_icon i{
-    font-size: 30px;
-    color: white;
+.btn_borrar_icon img{
+    width: 30px;
+    height: 30px;
 }
 
 .producto-detalles{
@@ -275,20 +296,36 @@ h2{
     text-align: center;
 }
 
-.form-cantidad{
+/* Estilos básicos para el contenedor */
+.cantidad-selector{
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 5px;
 }
 
-.cantidad-selector-carrito{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 5px;
-    margin-top: 5px;
+/* Estilos para el input */
+.cantidad-selector input{
+    width: 50px;
+    text-align: center;
+    margin: 0 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+/* Estilos para los botones */
+.cantidad-selector button{
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+/* Efecto al pasar el mouse sobre los botones */
+.cantidad-selector button:hover{
+    background-color: #ddd;
 }
 
 /* Estilo para las flechas (spinners) */
@@ -330,6 +367,7 @@ input[type="number"]::-webkit-outer-spin-button {
     cursor: pointer;
 }
 .producto-cantidad-disponible{
+    display: none;
     margin-bottom: -20px;
 }
 
@@ -376,6 +414,7 @@ input[type="number"]::-webkit-outer-spin-button {
     cursor: pointer;
     font-size: 1em;
     font-weight: bold;
+    margin: 0 auto;
 }
 
 .comprar_btn i{
@@ -443,6 +482,9 @@ input[type="number"]::-webkit-outer-spin-button {
         /* Deshabilitar escritura en el input */
         pointer-events: none;
     }
+    .comprar_btn{
+        margin: 0;
+    }
 }
 
 @media (min-width: 900px) {
@@ -452,12 +494,22 @@ input[type="number"]::-webkit-outer-spin-button {
     .compra{
         width: 70%;
         padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         border-bottom: none;
     }
     
     .info{
         width: 30%;
         padding-left: 20px;
+    }
+    .producto-cantidad-disponible{
+        display: block;
+        margin-bottom: -20px;
+    }
+    .btn_borrar_icon img{
+        width: 40px;
+        height: 40px;
     }
 }
 </style>
