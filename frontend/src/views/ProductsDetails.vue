@@ -68,8 +68,6 @@ export default {
             // logica para agregar producto con cantidad al local storage
             const productoConCantidad = {
                 id: this.producto.id,
-                nombre: this.producto.nombre,
-                precio: this.producto.precio,
                 cantidad: this.cantidad,
             };
             // Obtener el carrito del local storage
