@@ -4,7 +4,7 @@
             <div v-if="elementos.length > 0" class="carrito">
                 <div class="compra">
                     <h2 class="titulo">Carrito de Compras</h2>
-                    <div v-for="(elemento, index) in elementos" :key='index' class="producto">
+                    <a :href="'/product/' + elemento.id" v-for="(elemento, index) in elementos" :key='index' class="producto">
                         <div class="img_elemento">
                             <img src="../assets/banner_categoria.webp">
                         </div>
@@ -29,7 +29,7 @@
                         <div id="btn_borrar_del_carrito">
                             <a href="" class="btn_borrar_icon"><img src="../assets/close-svgrepo-com.svg"></a>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="info">
                     <h2 class="info_title"><i class='bx bx-info-circle' ></i> Detalles</h2><br>
@@ -183,6 +183,7 @@ h2{
     box-sizing: border-box;
     color: var(--texto);
     gap: 10px;
+    text-decoration: none;
 }
 
 .producto:nth-child(2){
@@ -506,10 +507,6 @@ input[type="number"]::-webkit-outer-spin-button {
     .producto-cantidad-disponible{
         display: block;
         margin-bottom: -20px;
-    }
-    .btn_borrar_icon img{
-        width: 40px;
-        height: 40px;
     }
 }
 </style>

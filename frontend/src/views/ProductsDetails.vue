@@ -221,9 +221,10 @@ export default {
     max-width: 950px;
     gap: 10px;
     margin-bottom: 20px;
-    background-color: var(--categorias);
-    color: var(--letras);
-    border-radius: 20px;
+    color: var(--texto);
+    font-family: "Open Sans", sans-serif;
+    font-size: 1em;
+    font-weight: 400;
     padding: 20px;
     max-height: 200px;
     overflow-y: auto;
