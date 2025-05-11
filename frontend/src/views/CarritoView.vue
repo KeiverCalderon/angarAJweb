@@ -4,19 +4,19 @@
             <div v-if="elementos.length > 0" class="carrito">
                 <div class="compra">
                     <h2 class="titulo">Carrito de Compras</h2>
-                    <a :href="'/product/' + elemento.id" v-for="(elemento, index) in elementos" :key='index' class="producto">
-                        <div class="img_elemento">
-                            <img src="../assets/banner_categoria.webp">
-                        </div>
+                    <div v-for="(elemento, index) in elementos" :key='index' class="producto">
+                        <a :href="'/product/' + elemento.id" class="img_elemento">
+                            <img src="../assets/banner_categoria.webp" :alt="elemento.nombre">
+                        </a>
                         <div id="elemento_del_carrito">
                             <div class="producto-detalles"><br><br>
                                 <h2>{{ elemento.nombre }}</h2><br>
                             </div>
                             <div class="cantidad-selector-carrito">
                                 <div class="cantidad-selector">
-                                    <button type="button" id="decremento" @click="decrementar()">-</button>
-                                    <input type="number" id="cantidad" name="cantidad" v-model="cantidad" :min="1" :max="elemento.stock" readonly>
-                                    <button type="button" id="incremento" @click="incrementar()">+</button>
+                                    <button type="button" id="decremento" @click="decrementar(index)">-</button>
+                                    <input type="number" id="cantidad" name="cantidad" v-model="elemento.cantidad" :min="1" :max="elemento.stock" readonly>
+                                    <button type="button" id="incremento" @click="incrementar(index)">+</button>
                                 </div>
                                 <div class="producto-cantidad-disponible">
                                     <span>Disponibles:</span> {{elemento.stock}}
@@ -29,7 +29,7 @@
                         <div id="btn_borrar_del_carrito">
                             <a href="" class="btn_borrar_icon"><img src="../assets/close-svgrepo-com.svg"></a>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <div class="info">
                     <h2 class="info_title"><i class='bx bx-info-circle' ></i> Detalles</h2><br>
@@ -92,12 +92,22 @@ export default {
             { id:23, nombre: "Leche Latti", precio: 500, descripcion: 'Leche Latti 1 litro, ideal para hacer tortas!', imagen: 'banner_categoria2.webp', stock: 23, cantidad: 2},
             ],
             total: 1000,
-            cantidad:1,
         };
     },
     methods: {
         goBack() {
         this.$router.back(); // Navega a la ruta anterior
+        },
+        incrementar(index) {
+            let stock = this.elementos[index].stock;
+            if (this.elementos[index].cantidad < stock) {
+                this.elementos[index].cantidad++;
+            }
+        },
+        decrementar(index) {
+            if (this.elementos[index].cantidad > 1) {
+                this.elementos[index].cantidad--;
+            }
         },
     },
 };
@@ -183,7 +193,6 @@ h2{
     box-sizing: border-box;
     color: var(--texto);
     gap: 10px;
-    text-decoration: none;
 }
 
 .producto:nth-child(2){
@@ -196,6 +205,7 @@ h2{
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
 }
 
 .img_elemento img{

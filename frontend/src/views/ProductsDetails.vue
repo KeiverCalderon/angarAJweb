@@ -218,14 +218,12 @@ export default {
     align-items: flex-start;
     flex-direction: column;
     width: 90%;
-    max-width: 950px;
     gap: 10px;
     margin-bottom: 20px;
     color: var(--texto);
-    font-family: "Open Sans", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 1em;
     font-weight: 400;
-    padding: 20px;
     max-height: 200px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -307,7 +305,6 @@ export default {
 
     #descripcion_article{
         animation: fadeInUp 2s ease forwards;
-        margin-left: -20px;
     }
 
     @keyframes fadeInUp {
