@@ -116,8 +116,7 @@ export default {
 
 .titulo{
     font-size: 2.5em;
-    margin-bottom: 10px;
-
+    margin-bottom: 20px;
 }
 
 .area-carrito{
@@ -128,6 +127,7 @@ export default {
     gap: 20px;
     background-color: var(--fondo);
     min-height: calc(100vh - 80px);
+    font-family: 'Roboto', sans-serif;
 }
 
 .contenido-carrito{
@@ -261,7 +261,7 @@ h2{
 
 .total {
     font-weight: bold;
-    font-size: 2em;
+    font-size: 1.5em;
     margin-bottom: 20px;
 }
 
