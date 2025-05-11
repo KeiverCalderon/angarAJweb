@@ -115,7 +115,6 @@ export default {
 <style scoped>
 
 .titulo{
-    color: var(--letras);
     font-size: 2.5em;
     margin-bottom: 10px;
 
@@ -174,7 +173,6 @@ export default {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    color: var(--letras);
     font-size: 2em;
     margin-bottom: 0px;
 }
@@ -264,7 +262,6 @@ h2{
 .total {
     font-weight: bold;
     font-size: 2em;
-    color: var(--letras);
     margin-bottom: 20px;
 }
 
