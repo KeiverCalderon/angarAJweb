@@ -39,7 +39,7 @@
                     <div class="total">
                         Total: {{ total }} <span>USD$</span>
                     </div>
-                    <button class="comprar_btn">Comprar Ahora<i class='bx bxl-whatsapp'></i></button>
+                    <button class="comprar_btn">Comprar Ahora ‎<i class='bx bxl-whatsapp'></i></button>
                 </div>
             </div>
             <div v-else class="carrito">
