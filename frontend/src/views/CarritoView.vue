@@ -1,43 +1,43 @@
 <template>
     <section class="area-carrito">
         <article class="contenido-carrito">
+            <h2 class="titulo">Carrito de Compras</h2>
             <div v-if="elementos.length > 0" class="carrito">
                 <div class="compra">
-                    <h2 class="titulo">Carrito de Compras</h2>
-                    <div v-for="(elemento, index) in elementos" :key='index' class="producto">
+                    <div class="producto" v-for="(elemento, index) in elementos" :key='index'>
+                        <div class="imagenYnombre">
                         <a :href="'/product/' + elemento.id" class="img_elemento">
+                            <div id="btn_borrar_del_carrito">
+                                <a href="" class="btn_borrar_icon"><img src="../assets/close-svgrepo-com.svg"></a>
+                            </div>
                             <img src="../assets/banner_categoria.webp" :alt="elemento.nombre">
                         </a>
-                        <div id="elemento_del_carrito">
-                            <div class="producto-detalles"><br><br>
-                                <h2>{{ elemento.nombre }}</h2><br>
+                            <div class="producto-detalles">
+                                <h2>{{ elemento.nombre }}</h2>
+                                <span>Disponibles: {{elemento.stock}}</span>
                             </div>
+                        </div>
                             <div class="cantidad-selector-carrito">
                                 <div class="cantidad-selector">
-                                    <button type="button" id="decremento" @click="decrementar(index)">-</button>
                                     <input type="number" id="cantidad" name="cantidad" v-model="elemento.cantidad" :min="1" :max="elemento.stock" readonly>
-                                    <button type="button" id="incremento" @click="incrementar(index)">+</button>
-                                </div>
-                                <div class="producto-cantidad-disponible">
-                                    <span>Disponibles:</span> {{elemento.stock}}
+                                    <div class="botones">
+                                        <span class="btn-incremento" @click="incrementar(index)"><img src="../assets/incremento.svg"></span>
+                                        <span class="btn-decremento" @click="decrementar(index)"><img src="../assets/decremento.svg"></span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="producto-precio"><br>
-                                <span>USD$</span> {{elemento.precio}} c/u
+                            <div class="producto-precio">
+                                <span>{{elemento.precio}}$</span> 
                             </div>
-                        </div>
-                        <div id="btn_borrar_del_carrito">
-                            <a href="" class="btn_borrar_icon"><img src="../assets/close-svgrepo-com.svg"></a>
-                        </div>
                     </div>
                 </div>
                 <div class="info">
                     <h2 class="info_title"><i class='bx bx-info-circle' ></i> Detalles</h2><br>
                     <div class="subtotal">
-                        Subtotal: {{ total }} <span>USD$</span>
+                        Subtotal: {{ total }} <span>$</span>
                     </div>
                     <div class="total">
-                        Total: {{ total }} <span>USD$</span>
+                        Total: {{ total }} <span>$</span>
                     </div>
                     <button class="comprar_btn">Comprar Ahora ‎<i class='bx bxl-whatsapp'></i></button>
                 </div>
@@ -48,31 +48,6 @@
                         <h2>Vaya! Aún no has añadido nada al carrito</h2>
                         <img src="" alt="">
                     </div>
-                </div>
-            </div>
-
-            <div id="ventana-paypal" class="ventana-pago">
-                <div class="contenido-ventana">
-                    <h3>Ingresar datos de PayPal</h3>
-                    <form id="form-paypal" onsubmit="document.getElementById('form-pago').submit(); return false;">
-                        <input type="email" id="paypal-email" placeholder="Correo electrónico" required>
-                        <p id="correoElectronicoError"></p>
-                        <button type="submit" id="paypalPayBtn" disabled>Aceptar</button>
-                        <button type="button" id="btn-cerrar-paypal">Cerrar</button>
-                    </form>
-                </div>
-            </div>
-            <div id="ventana-tarjeta" class="ventana-pago">
-                <div class="contenido-ventana">
-                    <h3>Ingresar datos de Tarjeta</h3>
-                    <form id="form-tarjeta" onsubmit="document.getElementById('form-pago').submit(); return false;">
-                        <input type="text" id="tarjeta-numero" placeholder="Número de tarjeta" required>
-                        <input type="text" id="tarjeta-cvv" placeholder="CVV" required>
-                        <input type="text" id="tarjeta-fecha" placeholder="MM/AA" required>
-                        <p id="consolaErrorCreditCard"></p>
-                        <button type="submit" id="creditCardBtn" disabled>Aceptar</button>
-                        <button type="button" id="btn-cerrar-tarjeta">Cerrar</button>
-                    </form>
                 </div>
             </div>
         </article>
@@ -115,8 +90,8 @@ export default {
 <style scoped>
 
 .titulo{
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 2em;
 }
 
 .area-carrito{
@@ -140,7 +115,6 @@ export default {
     box-sizing: border-box;
     padding: 10px;
     gap: 10px;
-    margin-top: 20px;
     margin-bottom: 20px;
     background-color: var(--tarjeta);
     border-radius: var(--border-radius-box);
@@ -149,9 +123,8 @@ export default {
 
 .carrito{
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
     max-width: 900px;
     box-sizing: border-box;
@@ -166,28 +139,29 @@ export default {
 .info{
     width: 100%;
     box-sizing: border-box;
-    padding: 20px 2px;
+    padding: 20px 10px;
 }
 
 .info_title{
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    font-size: 2em;
+    font-size: 1.8em;
     margin-bottom: 0px;
 }
 
 h2{
     margin-top: 0;
     margin-bottom: 0;
+    font-size: 1.3em;
 }
 
 .producto{
     display: flex;
-    justify-content: center;
+    /* cambiar a row después */
+    justify-content: space-between;
     align-items: center;
     border-bottom: solid 1px #A3A3A3;
-    padding: 0 20px;
+    padding: 15px 0px;
     box-sizing: border-box;
     color: var(--texto);
     gap: 10px;
@@ -207,13 +181,16 @@ h2{
 }
 
 .img_elemento img{
-    width: 75px;
-    height: 75px;
+    width: 50px;
+    height: 50px;
     border-radius: 5px;
 }
 
-#elemento_del_carrito{
-    width: calc(100% - 40px);   
+.imagenYnombre{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
 }
 
 #btn_borrar_del_carrito{
@@ -234,35 +211,38 @@ h2{
 }
 
 .btn_borrar_icon img{
-    width: 30px;
-    height: 30px;
+    width: 10px;
+    height: 10px;
 }
 
 .producto-detalles{
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    flex-direction: column;
     margin: 0;
+}
+
+.producto-detalles span{
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: var(--textoSecundario);
 }
 
 .producto-precio{
     display: flex;
-    justify-content: end;
-    align-items: center;
     font-weight: bold;
     font-size: 1.2em;
-    margin-bottom: 5px;
+    margin-right: 30px;
 }
 
 .subtotal {
-    font-size: 1.4em;
+    font-size: 1.3em;
     margin-bottom: 5px;
 }
 
 .total {
     font-weight: bold;
-    font-size: 1.5em;
-    margin-bottom: 20px;
+    font-size: 1.4em;
+    margin-bottom: 30px;
 }
 
 .checkout-button {
@@ -314,25 +294,48 @@ h2{
 .cantidad-selector input{
     width: 50px;
     text-align: center;
-    margin: 0 10px;
     font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 5px;
+    border-radius: 7px 0px 0px 7px;
+    padding-top: 9.7px;
+    padding-bottom: 9.9px;
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
 }
 
 /* Estilos para los botones */
-.cantidad-selector button{
-    padding: 5px 10px;
-    font-size: 16px;
+.btn-incremento, .btn-decremento {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
     cursor: pointer;
     border: 1px solid #ccc;
-    border-radius: 4px;
     background-color: #f9f9f9;
+    user-select: none;
+}
+
+.btn-incremento {
+    border-radius: 0px 7px 0px 0px;
+    border-bottom: none;
+}
+
+.btn-decremento {
+    border-radius: 0px 0px 7px 0px;
+    border-top: none;
+}
+
+.btn-incremento img, .btn-decremento img {
+    width: 10px;
+    padding: 7px 7px;
+    object-fit: cover;
 }
 
 /* Efecto al pasar el mouse sobre los botones */
-.cantidad-selector button:hover{
+.btn-incremento:hover, .btn-decremento:hover {
     background-color: #ddd;
 }
 
@@ -342,10 +345,10 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     /* Habilitar las flechas */
     pointer-events: auto;
+    margin: 0;
 }
 
 .cantidad-selector-carrito input[type="number"]{
-    margin-left: 10px;
     width: 40px;
     height: 20px;
     font-size: 16px;
@@ -373,10 +376,6 @@ input[type="number"]::-webkit-outer-spin-button {
 .btn-actualizar:hover{
     background-color: var(--boton-hover);
     cursor: pointer;
-}
-.producto-cantidad-disponible{
-    display: none;
-    margin-bottom: -20px;
 }
 
 .ventana-pago{
@@ -493,6 +492,15 @@ input[type="number"]::-webkit-outer-spin-button {
     .comprar_btn{
         margin: 0;
     }
+    .img_elemento img{
+        width: 75px;
+        height: 75px;
+        border-radius: 5px;
+    }
+    .btn_borrar_icon img{
+        width: 10px;
+        height: 10px;
+    }
 }
 
 @media (min-width: 900px) {
@@ -509,11 +517,8 @@ input[type="number"]::-webkit-outer-spin-button {
     
     .info{
         width: 30%;
+        padding-top: 0;
         padding-left: 20px;
-    }
-    .producto-cantidad-disponible{
-        display: block;
-        margin-bottom: -20px;
     }
 }
 </style>
