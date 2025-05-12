@@ -2,7 +2,8 @@
     <header>
             <h1><a href="/"><img src="../assets/logo.png" alt=""></a></h1>
             <div class="buttons-area">
-                <a href="/cart"><p class="a_text">Carrito</p><i class='bx bx-cart' ></i></a>
+                <a v-if="$route.path === '/cart'" href="/"><p class="a_text">Inicio</p><i class='bx bx-home' ></i></a>
+                <a v-else href="/cart"><p class="a_text">Carrito</p><i class='bx bx-cart' ></i></a>
                 <a href="/login"><p class="a_text">Cuenta</p><i class='bx bx-user' ></i></a>
             </div>
     </header>
