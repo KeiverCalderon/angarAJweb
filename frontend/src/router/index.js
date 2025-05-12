@@ -9,6 +9,7 @@ import CategoriesView from '../views/CategoriesView.vue';
 import ProductosView from '../views/ProductosView.vue';
 import ProductsDetails from '../views/ProductsDetails.vue';
 import CarritoView from '../views/CarritoView.vue'; 
+import MyAccountView from '@/views/MyAccountView.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -40,6 +41,10 @@ const router = createRouter({
           path: '/product/:product',
           name: 'Producto',
           component: ProductsDetails,
+        },
+        {
+          path: 'account',
+          component: MyAccountView,
         },
       ]
     },

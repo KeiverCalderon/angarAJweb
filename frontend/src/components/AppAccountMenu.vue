@@ -1,5 +1,5 @@
 <template>
-    <a @click="toggleMenu" :class="{ active: isMenuOpen }"><p class="a_text">Cuenta</p><i class='bx bx-user' ></i></a>
+    <a @click="toggleMenu" :class="{ active: isMenuOpen }"><p class="a_text">Perfil</p><i class='bx bx-user' ></i></a>
     <ul v-if="isMenuOpen" class="menu-dropdown">
         <li><router-link @click="toggleMenu" to="/login" class="menuOption">Iniciar Sesión</router-link></li>
         <li><router-link @click="toggleMenu" to="/account" class="menuOption">Mi Cuenta</router-link></li>
