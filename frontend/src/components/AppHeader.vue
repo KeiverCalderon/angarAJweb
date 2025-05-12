@@ -4,16 +4,21 @@
             <div class="buttons-area">
                 <a v-if="$route.path === '/cart'" href="/"><p class="a_text">Inicio</p><i class='bx bx-home' ></i></a>
                 <a v-else href="/cart"><p class="a_text">Carrito</p><i class='bx bx-cart' ></i></a>
-                <a href="/login"><p class="a_text">Cuenta</p><i class='bx bx-user' ></i></a>
+                <AppAccountMenu />
+                <!-- <a href="/login"><p class="a_text">Cuenta</p><i class='bx bx-user' ></i></a> -->
             </div>
     </header>
 </template>
 
 <script>
 import 'boxicons/css/boxicons.min.css';
+import AppAccountMenu from './AppAccountMenu.vue';
 
 export default {
     name: 'AppHeader',
+    components: {
+        AppAccountMenu
+    },
 };
 </script>
 
