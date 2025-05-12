@@ -6,12 +6,12 @@
                 <div class="compra">
                     <div class="producto" v-for="(elemento, index) in elementos" :key='index'>
                         <div class="imagenYnombre">
-                        <a :href="'/product/' + elemento.id" class="img_elemento">
                             <div id="btn_borrar_del_carrito">
                                 <a href="" class="btn_borrar_icon"><img src="../assets/close-svgrepo-com.svg"></a>
                             </div>
-                            <img src="../assets/banner_categoria.webp" :alt="elemento.nombre">
-                        </a>
+                            <a :href="'/product/' + elemento.id" class="img_elemento">
+                                <img src="../assets/banner_categoria.webp" :alt="elemento.nombre">
+                            </a>
                             <div class="producto-detalles">
                                 <h2>{{ elemento.nombre }}</h2>
                                 <span>Disponibles: {{elemento.stock}}</span>
@@ -190,7 +190,6 @@ h2{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
 }
 
 #btn_borrar_del_carrito{
@@ -211,14 +210,15 @@ h2{
 }
 
 .btn_borrar_icon img{
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
 }
 
 .producto-detalles{
     display: flex;
     flex-direction: column;
     margin: 0;
+    margin-left: 15px;
 }
 
 .producto-detalles span{
@@ -357,27 +357,6 @@ input[type="number"]::-webkit-outer-spin-button {
     /* pointer-events: none; */
     }
 
-.btn-actualizar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    background-color: var(--boton);
-    box-shadow: var(--box-shadow);
-    color: var(--texto-inverso);
-    padding: 4px;
-    border: none;
-}
-
-.btn-actualizar i{
-    font-size: 20px;
-}
-
-.btn-actualizar:hover{
-    background-color: var(--boton-hover);
-    cursor: pointer;
-}
-
 .ventana-pago{
     display: none;
     position: fixed;
@@ -498,8 +477,9 @@ input[type="number"]::-webkit-outer-spin-button {
         border-radius: 5px;
     }
     .btn_borrar_icon img{
-        width: 10px;
-        height: 10px;
+        width: 15px;
+        height: 15px;
+        margin-right: 15px;
     }
 }
 
