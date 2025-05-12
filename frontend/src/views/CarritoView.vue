@@ -17,18 +17,18 @@
                                 <span>Disponibles: {{elemento.stock}}</span>
                             </div>
                         </div>
-                            <div class="cantidad-selector-carrito">
-                                <div class="cantidad-selector">
-                                    <input type="number" id="cantidad" name="cantidad" v-model="elemento.cantidad" :min="1" :max="elemento.stock" readonly>
-                                    <div class="botones">
-                                        <span class="btn-incremento" @click="incrementar(index)"><img src="../assets/incremento.svg"></span>
-                                        <span class="btn-decremento" @click="decrementar(index)"><img src="../assets/decremento.svg"></span>
-                                    </div>
+                        <div class="cantidad-selector-carrito">
+                            <div class="cantidad-selector">
+                                <input type="number" id="cantidad" name="cantidad" v-model="elemento.cantidad" :min="1" :max="elemento.stock" readonly>
+                                <div class="botones">
+                                    <span class="btn-incremento" @click="incrementar(index)"><img src="../assets/incremento.svg"></span>
+                                    <span class="btn-decremento" @click="decrementar(index)"><img src="../assets/decremento.svg"></span>
                                 </div>
                             </div>
                             <div class="producto-precio">
                                 <span>{{elemento.precio}}$</span> 
                             </div>
+                        </div>
                     </div>
                 </div>
                 <div class="info">
@@ -157,9 +157,9 @@ h2{
 
 .producto{
     display: flex;
-    /* cambiar a row después */
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
     border-bottom: solid 1px #A3A3A3;
     padding: 15px 0px;
     box-sizing: border-box;
@@ -190,13 +190,14 @@ h2{
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 12px;
 }
 
 #btn_borrar_del_carrito{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
+    width: 30px;
     aspect-ratio: 1/1;
     border-radius: 10px;
 }
@@ -210,15 +211,14 @@ h2{
 }
 
 .btn_borrar_icon img{
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
 }
 
 .producto-detalles{
     display: flex;
     flex-direction: column;
     margin: 0;
-    margin-left: 15px;
 }
 
 .producto-detalles span{
@@ -231,7 +231,6 @@ h2{
     display: flex;
     font-weight: bold;
     font-size: 1.2em;
-    margin-right: 30px;
 }
 
 .subtotal {
@@ -284,10 +283,10 @@ h2{
     text-align: center;
 }
 
-/* Estilos básicos para el contenedor */
 .cantidad-selector{
     display: flex;
     align-items: center;
+    margin-right: 10px;
 }
 
 /* Estilos para el input */
@@ -339,13 +338,13 @@ h2{
     background-color: #ddd;
 }
 
-/* Estilo para las flechas (spinners) */
-.cantidad-selector-carrito
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    /* Habilitar las flechas */
-    pointer-events: auto;
-    margin: 0;
+.cantidad-selector-carrito{
+    margin-top: 30px;
+    max-height: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .cantidad-selector-carrito input[type="number"]{
@@ -430,7 +429,6 @@ input[type="number"]::-webkit-outer-spin-button {
 @media (min-width:750px){
     .carrito{
         flex-direction: row;
-        padding: 20px;
     }
 
     .carrito_vacio{
@@ -451,13 +449,28 @@ input[type="number"]::-webkit-outer-spin-button {
 
     .compra{
         width: 60%;
-        padding-right: 20px;
         border-bottom: none;
     }
-    
+    .producto{
+        display: flex;
+        align-items: center;
+        padding: 20px 0;
+    }
+    .producto-precio{
+        padding-right: 20px;
+    }
     .info{
-        width: 40%;
+        width: 30%;
+        padding-top: 0;
         padding-left: 20px;
+    }
+    .cantidad-selector-carrito{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        margin: 0;
+        width: 250px;
     }
     .cantidad-selector-carrito input[type="number"]{
         margin-left: 10px;
@@ -480,6 +493,9 @@ input[type="number"]::-webkit-outer-spin-button {
         width: 15px;
         height: 15px;
         margin-right: 15px;
+    }
+    .imagenYnombre{
+        gap: 15px;
     }
 }
 
