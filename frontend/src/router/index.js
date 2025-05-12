@@ -9,7 +9,7 @@ import CategoriesView from '../views/CategoriesView.vue';
 import ProductosView from '../views/ProductosView.vue';
 import ProductsDetails from '../views/ProductsDetails.vue';
 import CarritoView from '../views/CarritoView.vue'; 
-import MyAccountView from '@/views/MyAccountView.vue';
+import MyAccountView from '@/views/ProfileView.vue';
 
 const router = createRouter({
   history: createWebHistory(),

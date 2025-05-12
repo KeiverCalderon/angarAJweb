@@ -6,7 +6,7 @@
             <a v-else href="/cart"><p class="a_text">Carrito</p><i class='bx bx-cart' ></i></a>
             <a v-if="session===0" href="/login"><p class="a_text">Cuenta</p><i class='bx bx-user' ></i></a>
             <a v-else-if="session===1 && $route.path != '/account'" href="/account"><p class="a_text">Perfil</p><i class='bx bx-user' ></i></a>
-            <a v-else href="/admin"><p class="a_text">Volver</p><i class='bx bx-reply' ></i></a>
+            <a v-else-if="$route.path != '/account'" href="/admin"><p class="a_text">Volver</p><i class='bx bx-reply' ></i></a>
         </div>
 
         <!-- Herramientas de desarrollo -->
@@ -17,7 +17,7 @@
             <input type="number" v-model="session" placeholder="LEVEL" min="0" max="4">
             <p>Presione Z para cerrar</p>
         </div>
-
+        
     </header>
 </template>
 
@@ -39,7 +39,7 @@ export default {
             } // TEST
         }, // TEST
     },
-    mounted() {
+    mounted() { //aquí se debe obtener la sesión del usuario de la cookie
         window.addEventListener('keydown', this.toggleSelector);// TEST
     },
 };
@@ -91,6 +91,10 @@ h1 a img{
 .a_text{
         display: none;
     }
+
+.adm_fix{
+    display: none;
+}
 
 .buttons-area a {
     display: flex;
