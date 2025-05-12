@@ -89,9 +89,17 @@ export default {
 </script>
 <style scoped>
 
+/* *{
+    font-weight: 400;
+
+} */
+
 .titulo{
     margin-top: 10px;
     font-size: 2em;
+    font-family: "Cal Sans";
+    color: #333;
+    font-weight: 400;
 }
 
 .area-carrito{
@@ -225,6 +233,9 @@ h2{
     margin-top: 5px;
     font-size: 0.9em;
     color: var(--textoSecundario);
+    font-family: "Cal Sans";
+    color: #333;
+    font-weight: 400;
 }
 
 .producto-precio{
