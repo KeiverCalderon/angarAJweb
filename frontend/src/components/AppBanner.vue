@@ -6,23 +6,20 @@
             perPage: 1,
             arrows: true,
             autoplay: true,
-            interval: 10000,
+            interval: 6000,
             }"
         >
             <SplideSlide>
-                <img src="../assets/banner.png" alt="Bienvenido" class="carrousel_item">
+                <img src="../assets/slide1img.webp" alt="Bienvenido" class="carrousel_item">
             </SplideSlide>
             <SplideSlide>
-                <img src="../assets/slide2img.jpg" alt="Bienvenido" class="carrousel_item">
+                <img src="../assets/slide2img.webp" alt="Bienvenido" class="carrousel_item">
                 <div class="slide-content">
                     <h2>¡Bienvenido a nuestra tienda!</h2>
                     <p>Explora las categorías que tenemos para tí.</p>
                     <a href="/categories" class="slide-button">Ver Categorías</a>
                 </div>
             </SplideSlide>
-            <SplideSlide>Slide 3</SplideSlide>
-            <SplideSlide>Slide 4</SplideSlide>
-            <SplideSlide>Slide 5</SplideSlide>
         </Splide>
     </section>
 </template>
