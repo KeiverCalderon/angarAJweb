@@ -6,7 +6,7 @@
         <div class="product-info">
             <h3>{{ producto.nombre }}</h3>
             <p class="price">${{ producto.precio }}</p>
-            <button>Añadir al Carrito</button>
+            <button @click="agregarAlCarrito()">Añadir al Carrito</button>
         </div>
     </router-link>
     <router-link v-else :to="{ name: 'Producto', params: { product: producto.id } }" class="product-card-fixed">
@@ -16,12 +16,14 @@
         <div class="product-info">
             <h3>{{ producto.nombre }}</h3>
             <p class="price">${{ producto.precio }}</p>
-            <button>Añadir al Carrito</button>
+            <button @click="agregarAlCarrito()">Añadir al Carrito</button>
         </div>
     </router-link>
     
 </template>
 <script>
+import { push } from 'notivue'
+
 export default {
     name: 'AppProduct',
     props: {
@@ -34,6 +36,33 @@ export default {
             required: true,
         },
     },
+    methods: {
+        agregarAlCarrito() {
+            // logica para agregar producto con cantidad al local storage
+            const productoConCantidad = {
+                id: this.producto.id,
+                cantidad: '1',
+            };
+            // Obtener el carrito del local storage
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            // Verificar si el producto ya está en el carrito
+            const productoExistente = carrito.find(item => item.id === productoConCantidad.id);
+            if (productoExistente) {
+                // Si el producto ya está en el carrito, actualizar la cantidad
+                productoExistente.cantidad += this.cantidad;
+            } else {
+                // Si no está, agregarlo al carrito
+                carrito.push(productoConCantidad);
+            }
+            // Guardar el carrito actualizado en el local storage
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            let text = 'agregaste ' + productoConCantidad.cantidad + ' al carrito';
+            push.success({
+            title: 'Agregado',
+            message: text
+            })
+        },
+    }
 };
 </script>
 <style scoped>
