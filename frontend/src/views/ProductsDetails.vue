@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import { push } from 'notivue'
 
 export default {
     name: 'ProductsDetails',
@@ -83,7 +84,11 @@ export default {
             }
             // Guardar el carrito actualizado en el local storage
             localStorage.setItem('carrito', JSON.stringify(carrito));
-            console.log('Producto agregado al carrito:', productoConCantidad);
+            let text = 'agregaste ' + this.cantidad + ' al carrito';
+            push.success({
+            title: 'Agregado',
+            message: text
+            })
         },
     },
 };
