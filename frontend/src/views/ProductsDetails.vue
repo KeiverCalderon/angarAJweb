@@ -13,7 +13,7 @@
                         </div>
                     </div>
                     <p class="precio_preview"> <span>USD$</span> {{ producto.precio }} </p>
-                    <p class="stock_preview">Quedan {{ producto.stock }} unidades en stock</p>
+                    <p class="stock_preview"> <i class='bx bx-check'></i> Quedan {{ producto.stock }} unidades en stock</p>
                     <p class="cantidad_preview">Cantidad</p>
                     <div class="cantidad-selector">
                         <button type="button" id="decremento" @click="decrementar()">-</button>
@@ -164,13 +164,8 @@ export default {
 }
 
 .detalles_preview .nombre{
-    font-weight: 800;
+    font-weight: 400;
     font-size: 2rem;
-}
-
-.detalles_preview .precio_preview{
-    font-weight: 600;
-    font-size: 1.6rem;
 }
 
 .detalles_preview .precio_preview span{
@@ -178,10 +173,22 @@ export default {
     font-weight: 700;
 }
 
+.detalles_preview .precio_preview{
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+
 .detalles_preview .stock_preview{
     font-weight: 400;
     font-size: 0.9rem;
     margin: 2px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detalles_preview .stock_preview i{
+    font-size: 20px;
 }
 
 .detalles_preview .cantidad_preview{
@@ -226,7 +233,7 @@ export default {
     gap: 10px;
     margin-bottom: 20px;
     color: var(--texto);
-    font-family: "Poppins", sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 1em;
     font-weight: 400;
     max-height: 200px;
@@ -306,10 +313,6 @@ export default {
     .preview_producto{
         min-height: 350px;
         animation: fadeInUp 1.5s ease forwards;
-    }
-
-    #descripcion_article{
-        animation: fadeInUp 2s ease forwards;
     }
 
     @keyframes fadeInUp {
