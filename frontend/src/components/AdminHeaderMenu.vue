@@ -153,7 +153,7 @@ header .menu-button img{
 
 #menu-options{
     padding: 1px 0;
-    padding-left: 15px;
+    padding-left: 10px;
     width: 230px;  
     background-color: var(--header-admin);
     overflow-x: auto;
@@ -333,7 +333,7 @@ header .menu-button img{
         opacity: 1 !important;
         transition: none !important;
         display: block !important;
-        width: 250px;
+        width: 230px;
         overflow-y: hidden;
     }
     main{
