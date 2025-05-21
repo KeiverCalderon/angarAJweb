@@ -11,6 +11,7 @@ import ProductsDetails from '../views/ProductsDetails.vue';
 import CarritoView from '../views/CarritoView.vue'; 
 import MyAccountView from '@/views/ProfileView.vue';
 import AdminCategoriesView from '../views/AdminCategoriesView.vue';
+import AdminProductsView from '../views/AdminProductsView.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -60,6 +61,10 @@ const router = createRouter({
         {
           path: 'categories',
           component: AdminCategoriesView
+        },
+        {
+          path: 'products',
+          component: AdminProductsView
         },
       ]
     },

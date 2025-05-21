@@ -33,8 +33,8 @@
                         <td>Imagen</td>
                         <td>Nombre</td>
                         <td class="actions">
-                            <a href="{{ url_for('obtener_gasto', id_gasto=gasto.id) }}" class="btn-edit">Editar</a>
-                            <a href="{{ url_for('eliminar_gasto', id_gasto=gasto.id) }}" class="btn-delete">Eliminar</a>
+                            <a href="" class="btn-edit">Editar</a>
+                            <a href="" class="btn-delete">Eliminar</a>
                         </td>
                     </tr>
                 </tbody>
