@@ -1,4 +1,8 @@
 :root {
+  /* colores admin */
+    --light-color: #f8f9fa;
+    --btn-delete: #dc3545;
+    --btn-edit: #ffc107;
   /* Colores */
     --letras: #660236;
     --boton: #a91a4c;
@@ -14,6 +18,7 @@
     --footer-bg:#2d3748;
     --footer-link:#63b3ed;
   /* Medidas */
+    --border-radius-input: 10px;
     --border-radius-box:20px;
     --border-radius: 50px;
     --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
