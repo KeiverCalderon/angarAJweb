@@ -4,16 +4,21 @@
         <div class="form-card">
             <h2>Crear categoría</h2>
             <form>
-                <div class="form-group">
-                    <input type="text" name="nombre" id="nombre" placeholder="Nombre de la categoría">
-                </div>
-                <div class="container-btns">
-                    <div class="input-image">
-                        <label for="imagen" class="btn-upload">Subir imagen</label>
+                <div class="container-inputs">
+                    <div class="inputs">
+                        <div class="form-group">
+                            <input type="text" name="nombre" id="nombre" placeholder="Nombre de la categoría" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="eslogan" id="eslogan" placeholder="(Opcional) Eslogan o pequeña descripción">
+                        </div>
+                    </div>
+                    <div class="upload-image-box">
+                        <p>Selecciona la imagen para subir:</p>
                         <input type="file" name="imagen" id="imagen" accept="image/*" required>
                     </div>
-                    <button type="submit" class="btn-add">Añadir</button>
                 </div>
+                <button type="submit" class="btn-add">Añadir</button>
             </form>
         </div>
         <div class="table-categories">
@@ -65,7 +70,7 @@ h2{
     background-color: white;
     border-radius: var(--border-radius-box);
     box-shadow: var(--box-shadow);
-    margin: 20px;
+    margin: 30px 20px;
     padding: 20px;
 }
 
@@ -82,38 +87,45 @@ h2{
     box-sizing: border-box;
 }
 
-.input-image {
+.upload-image-box {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%; 
+    height: 150px;
+    border: 2px dashed #dbdbdb;
+    border-radius: 5px; 
+    background-color: #f4f4f4; 
+    padding: 15px;
     gap: 10px;
+    text-align: center; 
+    box-sizing: border-box;
 }
 
-.input-image input[type="file"] {
-    display: none;
+.upload-image-box p{
+    margin: 10px;
 }
 
-.btn-upload {
-    width: 100px;
-    padding: 10px 10px;
-    margin: 5px 0;
-    text-align: center;
-    color: #ffffff;
-    background-color: #1a232c;
-    border-radius: var(--border-radius-input);
+#imagen {
+    width: 90%;
+    border: none;
+    padding: 20px 10px;
     cursor: pointer;
-    transition: background 0.2s;
-    box-shadow: var(--box-shadow);
+    background-color: #ebebeb;
+    border-radius: 10px;
+    color: #333;
+    transition: background-color 0.3s;
 }
 
-.btn-upload:hover {
-    background-color: #000101;
+#imagen:hover {
+    background-color: #bbb;
 }
 
 .btn-add {
     font-family: "Cal Sans", sans-serif;
     border: none;
-    padding: 10px 20px;
-    margin: 5px 0;
+    padding: 12px 20px;
+    margin-top: 15px;
     text-align: center;
     color: #ffffff;
     background-color: #1a232c;
@@ -123,18 +135,16 @@ h2{
     box-shadow: var(--box-shadow);
 }
 
-.container-btns{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
+.btn-add:hover {
+    background-color: #000101;
 }
 
 .table-categories {
     background-color: white;
     border-radius: var(--border-radius-box);
     box-shadow: var(--box-shadow);
+    margin: 30px 20px;
     padding: 20px;
-    margin: 20px;
     overflow-x: auto;
 }
 
@@ -191,15 +201,15 @@ th {
     width: 90%;
     margin: 30px;
 }
-
-}
-
-/* pantallas super pequeñas */
-@media(max-width: 300px){
-.container-btns{
+.container-inputs{
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+}
+.inputs,
+.upload-image-box{
+    width: 50%;
 }
 }
 
