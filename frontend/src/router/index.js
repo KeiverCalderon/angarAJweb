@@ -10,8 +10,10 @@ import ProductosView from '../views/ProductosView.vue';
 import ProductsDetails from '../views/ProductsDetails.vue';
 import CarritoView from '../views/CarritoView.vue'; 
 import MyAccountView from '@/views/ProfileView.vue';
+import AdminAdminsView from '../views/AdminAdminsView.vue';
 import AdminCategoriesView from '../views/AdminCategoriesView.vue';
 import AdminProductsView from '../views/AdminProductsView.vue';
+import AdminSupervisorsView from '../views/AdminSupervisorsView.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -59,12 +61,20 @@ const router = createRouter({
           component: Dashboard
         },
         {
+          path: 'admins',
+          component: AdminAdminsView
+        },
+        {
           path: 'categories',
           component: AdminCategoriesView
         },
         {
           path: 'products',
           component: AdminProductsView
+        },
+        {
+          path: 'supervisors',
+          component: AdminSupervisorsView
         },
       ]
     },
