@@ -7,16 +7,16 @@
                 <div class="container-inputs">
                     <div class="inputs">
                         <div class="form-group">
-                            <input type="text" name="marca" id="marca" placeholder="Marca">
+                            <input type="text" name="marca" id="marca" placeholder="Marca" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="precio" id="precio" placeholder="Precio">
+                            <input type="number" name="precio" id="precio" placeholder="Precio" required>
                         </div>
                         <div class="form-group">
-                            <input type="number" name="stock" id="stock" placeholder="Stock">
+                            <input type="number" name="stock" id="stock" placeholder="Stock" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="descripcion" id="descripcion" placeholder="Descripcion del producto">
+                            <input type="text" name="descripcion" id="descripcion" placeholder="Descripcion del producto" required>
                         </div>
                     </div>
                     <div class="upload-image-box">
